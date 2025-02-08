@@ -1,0 +1,83 @@
+This file contains any messages produced by compilers while
+running configure, to aid debugging if configure makes a mistake.
+
+configure:600: checking host system type
+configure:621: checking target system type
+configure:639: checking build system type
+configure:694: checking for a BSD compatible install
+configure:747: checking whether ln works
+configure:771: checking whether ln -s works
+configure:1825: checking for gcc
+configure:1938: checking whether the C compiler (gcc  ) works
+configure:1954: gcc -o conftest    conftest.c  1>&5
+configure:1951:1: warning: return type defaults to 'int' [-Wimplicit-int]
+configure:1980: checking whether the C compiler (gcc  ) is a cross-compiler
+configure:1985: checking whether we are using GNU C
+configure:2013: checking whether gcc accepts -g
+configure:2080: checking for gnatbind
+configure:2145: checking whether compiler driver understands Ada
+configure:2177: checking how to compare bootstrapped objects
+configure:2275: checking for correct version of gmp.h
+configure:2288: gcc -c -g -O2   conftest.c 1>&5
+configure:2301: checking for MPFR
+configure:2314: gcc -o conftest -g -O2    conftest.c  -lmpfr -lgmp 1>&5
+configure:3313: checking for bison
+configure:3353: checking for bison
+configure:3392: checking for gm4
+configure:3431: checking for flex
+configure:3471: checking for flex
+configure:3510: checking for makeinfo
+configure:3563: checking for expect
+configure:3604: checking for runtest
+configure:3652: checking for x86_64-unknown-linux-gnu-ar
+configure:3727: checking for x86_64-unknown-linux-gnu-as
+configure:3802: checking for x86_64-unknown-linux-gnu-dlltool
+configure:3833: checking for dlltool
+configure:3877: checking for x86_64-unknown-linux-gnu-ld
+configure:3952: checking for x86_64-unknown-linux-gnu-lipo
+configure:3983: checking for lipo
+configure:4027: checking for x86_64-unknown-linux-gnu-nm
+configure:4102: checking for x86_64-unknown-linux-gnu-ranlib
+configure:4172: checking for x86_64-unknown-linux-gnu-strip
+configure:4242: checking for x86_64-unknown-linux-gnu-windres
+configure:4273: checking for windres
+configure:4317: checking for x86_64-unknown-linux-gnu-objcopy
+configure:4392: checking for x86_64-unknown-linux-gnu-objdump
+configure:4474: checking for x86_64-unknown-linux-gnu-ar
+configure:4549: checking for x86_64-unknown-linux-gnu-as
+configure:4624: checking for x86_64-unknown-linux-gnu-cc
+configure:4699: checking for x86_64-unknown-linux-gnu-c++
+configure:4774: checking for x86_64-unknown-linux-gnu-dlltool
+configure:4805: checking for dlltool
+configure:4849: checking for x86_64-unknown-linux-gnu-gcc
+configure:4919: checking for x86_64-unknown-linux-gnu-gcj
+configure:4950: checking for gcj
+configure:4994: checking for x86_64-unknown-linux-gnu-gfortran
+configure:5025: checking for gfortran
+configure:5069: checking for x86_64-unknown-linux-gnu-ld
+configure:5144: checking for x86_64-unknown-linux-gnu-lipo
+configure:5175: checking for lipo
+configure:5219: checking for x86_64-unknown-linux-gnu-nm
+configure:5294: checking for x86_64-unknown-linux-gnu-objdump
+configure:5369: checking for x86_64-unknown-linux-gnu-ranlib
+configure:5439: checking for x86_64-unknown-linux-gnu-strip
+configure:5514: checking for x86_64-unknown-linux-gnu-windres
+configure:5545: checking for windres
+configure:5588: checking where to find the target ar
+configure:5613: checking where to find the target as
+configure:5638: checking where to find the target cc
+configure:5663: checking where to find the target c++
+configure:5691: checking where to find the target c++ for libstdc++
+configure:5719: checking where to find the target dlltool
+configure:5744: checking where to find the target gcc
+configure:5769: checking where to find the target gcj
+configure:5797: checking where to find the target gfortran
+configure:5825: checking where to find the target ld
+configure:5850: checking where to find the target lipo
+configure:5865: checking where to find the target nm
+configure:5890: checking where to find the target objdump
+configure:5915: checking where to find the target ranlib
+configure:5940: checking where to find the target strip
+configure:5965: checking where to find the target windres
+configure:6018: checking whether to enable maintainer-specific portions of Makefiles
+configure:6065: checking if symbolic links between directories work
