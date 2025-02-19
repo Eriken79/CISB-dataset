@@ -6,6 +6,8 @@ import os
 import argparse
 import subprocess
 import signal
+import csv
+from datetime import datetime
 
 arm_file_list = ['l-23.c', 'b-26.c']
 reproduce_set_path = '../testcases/'
@@ -123,75 +125,81 @@ if __name__ == '__main__':
     ccs = ['gcc', 'clang']
     cisb_found = 0
     cisb_not_found = 0
-    for file_name in os.listdir(folder_path):
-        print(file_name)
-        for cc in ccs:
-            for opti_level in opti_levels:
-                #opti_level = 'O0'
-                file = ''
-                #cc = args.cc
-                argss = ''
-                section_end = '>:'
-                #if args.opt:
-                #    f = open(args.opt.name, 'r')
-                #    argss = f.read()
-                #    f.close()
-                file = file_name + '-' + cc + '-' + opti_level
-                args = ' -' + opti_level + ' ' + argss
-                with open('exp1config.yml', 'r') as f:
-                    # get config for files
-                    
-                    configs = yaml.safe_load(f.read())
-                    if file not in configs:
-                        print('Error: can\'t find ' + file + ' in the config file!')
-                        continue
-                    config = configs[file]
-                    file_name = config['file_name']
-                    cc_ver = config['cc']
-                    # opti_level = '-' + config['opti_level']
-                    input = str(config['input'])
-                    check_type = config['check_type']
-                    test_str = config['test_str']
-                    section_name = config['section_name']
-                    special_cause = config['special_cause']
-                    if section_name and section_name.split(' ')[0] == 'between':
-                        section_start = section_name.split(' ')[1]
-                        section_end = section_name.split(' ')[2]
-                    else:
-                        section_start = section_name
-                    if 'default_option' in config:
-                        default_option = config['default_option']
-                        args += ' ' + default_option
-                    if(input == None):
-                        input = ''
-
-                    if 'undefined' in args:
-                        # ubsan only
-                        result = ubsan_testing(cc_ver, args, file_name, input)
-                        print('ubsan work or not: ', result)
-
-                    elif 'Wall' in args:
-                        # Wall only
-                        warning_num = warning_testing(cc_ver, args, file_name)
-                        print(warning_num, ' warngings reported')
+    with open('./csv_files/experiment_1.csv', mode='w', newline='') as csv_file:
+        writer = csv.writer(csv_file)
+        writer.writerow(['exp_id', 'test_id', 'compiler', 'optimization_level', 'architecture', 'output', 'timestamp'])
+        for file_name in os.listdir(folder_path):
+            print(file_name)
+            for cc in ccs:
+                for opti_level in opti_levels:
+                    #opti_level = 'O0'
+                    file = ''
+                    #cc = args.cc
+                    argss = ''
+                    section_end = '>:'
+                    #if args.opt:
+                    #    f = open(args.opt.name, 'r')
+                    #    argss = f.read()
+                    #    f.close()
+                    file = file_name + '-' + cc + '-' + opti_level
+                    args = ' -' + opti_level + ' ' + argss
+                    with open('exp1config.yml', 'r') as f:
+                        # get config for files
                         
-                    else:
-                        if check_type == 5 or check_type == 6 or check_type == 7:
-                            section_end = ':'
-                            args += ' -S -o temp.s '
-                            ret_code = os.system(cc_ver + ' ' + args + ' ' + reproduce_set_path + file_name)
-                            assert( ret_code == 0 and 'error')
+                        configs = yaml.safe_load(f.read())
+                        if file not in configs:
+                            print('Error: can\'t find ' + file + ' in the config file!')
+                            writer.writerow(['exp_1', file_name, cc, opti_level, 'x86_64', '2', datetime.now()])
+                            continue
+                        config = configs[file]
+                        file_name = config['file_name']
+                        cc_ver = config['cc']
+                        # opti_level = '-' + config['opti_level']
+                        input = str(config['input'])
+                        check_type = config['check_type']
+                        test_str = config['test_str']
+                        section_name = config['section_name']
+                        special_cause = config['special_cause']
+                        if section_name and section_name.split(' ')[0] == 'between':
+                            section_start = section_name.split(' ')[1]
+                            section_end = section_name.split(' ')[2]
                         else:
-                            ret_code = os.system(cc_ver + ' ' + args + ' ' + reproduce_set_path + file_name)
-                            assert( ret_code == 0 and 'error')
-                        print(cc + ' ' + args + ' ' + reproduce_set_path + file_name)
-                        if not bug_not_trigger(check_type, input, test_str, section_start, section_end):
-                            print(check_type, input, test_str, section_start, section_end)
-                            print('One CISB here!')
-                            cisb_found += 1
+                            section_start = section_name
+                        if 'default_option' in config:
+                            default_option = config['default_option']
+                            args += ' ' + default_option
+                        if(input == None):
+                            input = ''
+
+                        if 'undefined' in args:
+                            # ubsan only
+                            result = ubsan_testing(cc_ver, args, file_name, input)
+                            print('ubsan work or not: ', result)
+
+                        elif 'Wall' in args:
+                            # Wall only
+                            warning_num = warning_testing(cc_ver, args, file_name)
+                            print(warning_num, ' warngings reported')
+                            
                         else:
-                            print(check_type, input, test_str, section_start, section_end)
-                            print('No CISB here!')
-                            cisb_not_found += 1
-    print(cisb_found)
-    print(cisb_not_found)
+                            if check_type == 5 or check_type == 6 or check_type == 7:
+                                section_end = ':'
+                                args += ' -S -o temp.s '
+                                ret_code = os.system(cc_ver + ' ' + args + ' ' + reproduce_set_path + file_name)
+                                assert( ret_code == 0 and 'error')
+                            else:
+                                ret_code = os.system(cc_ver + ' ' + args + ' ' + reproduce_set_path + file_name)
+                                assert( ret_code == 0 and 'error')
+                            print(cc + ' ' + args + ' ' + reproduce_set_path + file_name)
+                            if not bug_not_trigger(check_type, input, test_str, section_start, section_end):
+                                print(check_type, input, test_str, section_start, section_end)
+                                print('One CISB here!')
+                                writer.writerow(['exp_1', file_name, cc, opti_level, 'x86_64', '1', datetime.now()])
+                                cisb_found += 1
+                            else:
+                                print(check_type, input, test_str, section_start, section_end)
+                                print('No CISB here!')
+                                writer.writerow(['exp_1', file_name, cc, opti_level, 'x86_64', '0', datetime.now()])
+                                cisb_not_found += 1
+        print(cisb_found)
+        print(cisb_not_found)

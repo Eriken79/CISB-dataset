@@ -2222,96 +2222,6 @@ l-15.c-clang-O0:
     section_name: "<main>:"
     special_cause: DB
 
-l-16.c-gcc-O4:
-    file_name: "l-16.c"
-    cc: gcc-12
-    input:
-    check_type: 5
-    test_str: "test"
-    section_name: "#NO_APP"
-    special_cause: UB
-
-l-16.c-gcc-O3:
-    file_name: "l-16.c"
-    cc: gcc-12
-    input:
-    check_type: 5
-    test_str: "test"
-    section_name: "#NO_APP"
-    special_cause: UB
-
-l-16.c-gcc-O2:
-    file_name: "l-16.c"
-    cc: gcc-12
-    input:
-    check_type: 5
-    test_str: "test"
-    section_name: "#NO_APP"
-    special_cause: UB
-
-l-16.c-gcc-O1:
-    file_name: "l-16.c"
-    cc: gcc-12
-    input:
-    check_type: 5
-    test_str: "test"
-    section_name: "#NO_APP"
-    special_cause: UB
-
-l-16.c-gcc-O0:
-    file_name: "l-16.c"
-    cc: gcc-12
-    input:
-    check_type: 5
-    test_str: "cmp"
-    section_name: "#NO_APP"
-    special_cause: UB
-
-l-16.c-clang-O4:
-    file_name: "l-16.c"
-    cc: clang-14
-    input:
-    check_type: 5
-    test_str: "test"
-    section_name: "#NO_APP"
-    special_cause: UB
-
-l-16.c-clang-O3:
-    file_name: "l-16.c"
-    cc: clang-14
-    input:
-    check_type: 5
-    test_str: "test"
-    section_name: "#NO_APP"
-    special_cause: UB
-
-l-16.c-clang-O2:
-    file_name: "l-16.c"
-    cc: clang-14
-    input:
-    check_type: 5
-    test_str: "test"
-    section_name: "#NO_APP"
-    special_cause: UB
-
-l-16.c-clang-O1:
-    file_name: "l-16.c"
-    cc: clang-14
-    input:
-    check_type: 5
-    test_str: "test"
-    section_name: "#NO_APP"
-    special_cause: UB
-
-l-16.c-clang-O0:
-    file_name: "l-16.c"
-    cc: clang-14
-    input:
-    check_type: 5
-    test_str: "cmp"
-    section_name: "#NO_APP"
-    special_cause: UB
-
 l-18.c-gcc-O4:
     file_name: "l-18.c"
     cc: gcc-12
@@ -2333,7 +2243,7 @@ l-18.c-gcc-O3:
 
 l-18.c-gcc-O2:
     file_name: "l-18.c"
-    cc: gcc-4.4
+    cc: gcc-12
     input:
     check_type: 4
     test_str: "memset"
@@ -2342,7 +2252,7 @@ l-18.c-gcc-O2:
 
 l-18.c-gcc-O1:
     file_name: "l-18.c"
-    cc: gcc-4.4
+    cc: gcc-12
     input:
     check_type: 4
     test_str: "memset"
@@ -2351,7 +2261,7 @@ l-18.c-gcc-O1:
 
 l-18.c-gcc-O0:
     file_name: "l-18.c"
-    cc: gcc-4.4
+    cc: gcc-12
     input:
     check_type: 4
     test_str: "memset"
@@ -2793,108 +2703,6 @@ l-37.c-clang-O0:
     test_str: "add    $0x1"
     section_name: "<main>:"
     special_cause: "Others"
-
-l-41.c-gcc-O4:
-    file_name: "l-41.c"
-    cc: gcc-12
-    input:
-    check_type: 5
-    test_str: "have_cpuid_p"
-    section_name: "between .L14: puts"
-    default_option: "-m32"
-    special_cause: "Environment assumption"
-
-
-l-41.c-gcc-O3:
-    file_name: "l-41.c"
-    cc: gcc-12
-    input:
-    check_type: 5
-    test_str: "have_cpuid_p"
-    section_name: "between .L14: puts"
-    default_option: "-m32"
-    special_cause: "Environment assumption"
-
-l-41.c-gcc-O2:
-    file_name: "l-41.c"
-    cc: gcc-12
-    input:
-    check_type: 5
-    test_str: "have_cpuid_p"
-    section_name: "between .L14: puts"
-    default_option: "-m32"
-    special_cause: "Environment assumption"
-
-l-41.c-gcc-O1:
-    file_name: "l-41.c"
-    cc: gcc-12
-    input:
-    check_type: 5
-    test_str: "have_cpuid_p"
-    section_name: "between .L10: puts"
-    default_option: "-m32"
-    special_cause: "Environment assumption"
-
-l-41.c-gcc-O0:
-    file_name: "l-41.c"
-    cc: gcc-12
-    input:
-    check_type: 5
-    test_str: "have_cpuid_p"
-    section_name: "between .L9: puts"
-    default_option: "-m32"
-    special_cause: "Environment assumption"
-
-l-41.c-clang-O4:
-    file_name: "l-41.c"
-    cc: clang-14
-    input:
-    check_type: 5
-    test_str: "have_cpuid_p"
-    section_name: "between .LBB4_4: puts"
-    default_option: "-m32"
-    special_cause: "Environment assumption"
-
-
-l-41.c-clang-O3:
-    file_name: "l-41.c"
-    cc: clang-14
-    input:
-    check_type: 5
-    test_str: "have_cpuid_p"
-    section_name: "between .LBB4_4: puts"
-    default_option: "-m32"
-    special_cause: "Environment assumption"
-
-l-41.c-clang-O2:
-    file_name: "l-41.c"
-    cc: clang-14
-    input:
-    check_type: 5
-    test_str: "have_cpuid_p"
-    section_name: "between .LBB4_4: puts"
-    default_option: "-m32"
-    special_cause: "Environment assumption"
-
-l-41.c-clang-O1:
-    file_name: "l-41.c"
-    cc: clang-14
-    input:
-    check_type: 5
-    test_str: "have_cpuid_p"
-    section_name: "between .LBB4_4: puts"
-    default_option: "-m32"
-    special_cause: "Environment assumption"
-
-l-41.c-clang-O0:
-    file_name: "l-41.c"
-    cc: clang-14
-    input:
-    check_type: 5
-    test_str: "have_cpuid_p"
-    section_name: "between .LBB4_4: puts"
-    default_option: "-m32"
-    special_cause: "Environment assumption"
 
 l-43.c-gcc-O4:
     file_name: "l-43.c"
