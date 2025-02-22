@@ -15,7 +15,7 @@ symbol_table = pivot_table.replace(symbol_map)
 
 latex_table = pivot_table.to_latex(escape=False)  # Keep LaTeX symbols intact
 
-with open("./figure_out/experiment_1_x86.tex", "w") as f:
+with open("./figure_out_x86/experiment_1_x86.tex", "w") as f:
     f.write(latex_table)
 
 
@@ -50,6 +50,6 @@ ax.set_ylabel("Configuration")
 ax.set_title("Test Results")
 
 # Save figure as PDF for LaTeX
-plt.savefig("./figure_out/experiment_1_x86.pdf", bbox_inches="tight", dpi=300)
+plt.savefig("./figure_out_x86/experiment_1_x86.pdf", bbox_inches="tight", dpi=300)
 plt.show()
 
