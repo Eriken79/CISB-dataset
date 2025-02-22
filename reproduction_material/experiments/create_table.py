@@ -15,7 +15,7 @@ symbol_table = pivot_table.replace(symbol_map)
 
 latex_table = pivot_table.to_latex(escape=False)  # Keep LaTeX symbols intact
 
-with open("output_table.tex", "w") as f:
+with open("./figure_out_arm/experiment_1_arm.tex", "w") as f:
     f.write(latex_table)
 
 
@@ -23,9 +23,9 @@ print(pivot_table)
 
 
 # Define colors and symbols for plotting
-symbol_map = {0: ("❌", "red"), 
-              1: ("✅", "green"), 
-              2: ("❓", "blue")}
+symbol_map = {0: ("X", "red"), 
+              1: ("$", "green"), 
+              2: ("?", "blue")}
 
 fig, ax = plt.subplots(figsize=(10, 6))
 
@@ -50,7 +50,6 @@ ax.set_ylabel("Configuration")
 ax.set_title("Test Results")
 
 # Save figure as PDF for LaTeX
-plt.savefig("output_table.pdf", bbox_inches="tight", dpi=300)
+plt.savefig("./figure_out_arm/experiment_1_arm.pdf", bbox_inches="tight", dpi=300)
 plt.show()
 
-print("Figure saved as output_table.pdf!")

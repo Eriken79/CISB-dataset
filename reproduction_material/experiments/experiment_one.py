@@ -149,7 +149,7 @@ if __name__ == '__main__':
                         configs = yaml.safe_load(f.read())
                         if file not in configs:
                             print('Error: can\'t find ' + file + ' in the config file!')
-                            writer.writerow(['exp_1', file_name, cc, opti_level, 'x86_64', '2', datetime.now()])
+                            writer.writerow(['exp_1', file_name, cc, opti_level, 'arm', '2', datetime.now()])
                             continue
                         config = configs[file]
                         file_name = config['file_name']
@@ -194,12 +194,12 @@ if __name__ == '__main__':
                             if not bug_not_trigger(check_type, input, test_str, section_start, section_end):
                                 print(check_type, input, test_str, section_start, section_end)
                                 print('One CISB here!')
-                                writer.writerow(['exp_1', file_name, cc, opti_level, 'x86_64', '1', datetime.now()])
+                                writer.writerow(['exp_1', file_name, cc, opti_level, 'arm', '1', datetime.now()])
                                 cisb_found += 1
                             else:
                                 print(check_type, input, test_str, section_start, section_end)
                                 print('No CISB here!')
-                                writer.writerow(['exp_1', file_name, cc, opti_level, 'x86_64', '0', datetime.now()])
+                                writer.writerow(['exp_1', file_name, cc, opti_level, 'arm', '0', datetime.now()])
                                 cisb_not_found += 1
         print(cisb_found)
         print(cisb_not_found)
