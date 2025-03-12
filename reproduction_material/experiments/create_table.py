@@ -5,7 +5,7 @@ symbol_map = {0: r"\textcolor{red}{$\times$}",
               1: r"\textcolor{green}{$\checkmark$}", 
               2: r"\textcolor{blue}{?}"}
 
-df = pd.read_csv("./csv_files/experiment_1.csv")
+df = pd.read_csv("./csv_files/experiment_2.csv")
 
 df["config"] = df["compiler"] + "_" + df["optimization_level"] + "_" + df["architecture"]
 
@@ -15,7 +15,7 @@ symbol_table = pivot_table.replace(symbol_map)
 
 latex_table = pivot_table.to_latex(escape=False)  # Keep LaTeX symbols intact
 
-with open("./figure_out_x86/experiment_1_x86.tex", "w") as f:
+with open("./figure_out_x86/experiment_2_x86.tex", "w") as f:
     f.write(latex_table)
 
 
@@ -50,6 +50,6 @@ ax.set_ylabel("Configuration")
 ax.set_title("Test Results")
 
 # Save figure as PDF for LaTeX
-plt.savefig("./figure_out_x86/experiment_1_x86.pdf", bbox_inches="tight", dpi=300)
+plt.savefig("./figure_out_x86/experiment_2_x86.pdf", bbox_inches="tight", dpi=300)
 plt.show()
 

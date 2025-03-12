@@ -1,0 +1,91 @@
+b-2.c-gcc-O4:
+    file_name: "b-2.c"
+    cc: gcc-12
+    input: 0
+    check_type: 1
+    test_str: ok
+    section_name: 
+    special_cause: UB
+
+
+b-2.c-gcc-O3:
+    file_name: "b-2.c"
+    cc: gcc-12
+    input: 0
+    check_type: 1
+    test_str: ok
+    section_name: 
+    special_cause: UB
+
+b-2.c-gcc-O2:
+    file_name: "b-2.c"
+    cc: gcc-12
+    input: 0
+    check_type: 1
+    test_str: ok
+    section_name: 
+    special_cause: UB
+
+b-2.c-gcc-O1:
+    file_name: "b-2.c"
+    cc: gcc-12
+    input: 0
+    check_type: 1
+    test_str: ok
+    section_name: 
+    special_cause: UB
+
+b-2.c-gcc-O0:
+    file_name: "b-2.c"
+    cc: gcc-12
+    input: 0
+    check_type: 1
+    test_str: ok
+    section_name: 
+    special_cause: UB
+
+b-2.c-clang-O4:
+    file_name: "b-2.c"
+    cc: clang-14
+    input: 0
+    check_type: 3
+    test_str: "cmp"
+    section_name: "<test>:"
+    special_cause: UB
+
+b-2.c-clang-O3:
+    file_name: "b-2.c"
+    cc: clang-14
+    input: 0
+    check_type: 3
+    test_str: "cmp"
+    section_name: "<test>:"
+    special_cause: UB
+
+b-2.c-clang-O2:
+    file_name: "b-2.c"
+    cc: clang-14
+    input: 0
+    check_type: 3
+    test_str: "cmp"
+    section_name: "<test>:"
+    special_cause: UB
+
+b-2.c-clang-O1:
+    file_name: "b-2.c"
+    cc: clang-14
+    input: 0
+    check_type: 3
+    test_str: "cmp"
+    section_name: "<test>:"
+    special_cause: UB
+
+b-2.c-clang-O0:
+    file_name: "b-2.c"
+    cc: clang-14
+    input: 0
+    check_type: 3
+    test_str: "cmp"
+    section_name: "<test>:"
+    special_cause: UB
+

@@ -1,0 +1,89 @@
+b-1.c-gcc-O4:
+    file_name: "b-1.c"
+    cc: gcc-12
+    input: 
+    check_type: 3
+    test_str: "jne"
+    section_name: "<strcmp>:"
+    special_cause: UB
+
+b-1.c-gcc-O3:
+    file_name: "b-1.c"
+    cc: gcc-12
+    input: 
+    check_type: 3
+    test_str: "jne"
+    section_name: "<strcmp>:"
+    special_cause: UB
+
+b-1.c-gcc-O2:
+    file_name: "b-1.c"
+    cc: gcc-12
+    input: 
+    check_type: 3
+    test_str: "cmpq   $0x0"
+    section_name: "<strcmp>:"
+    special_cause: UB
+
+b-1.c-gcc-O1:
+    file_name: "b-1.c"
+    cc: gcc-12
+    input: 
+    check_type: 3
+    test_str: "cmpq   $0x0"
+    section_name: "<strcmp>:"
+    special_cause: UB
+
+b-1.c-gcc-O0:
+    file_name: "b-1.c"
+    cc: gcc-12
+    input: 
+    check_type: 3
+    test_str: "cmpq   $0x0"
+    section_name: "<strcmp>:"
+    special_cause: UB
+
+b-1.c-clang-O4:
+    file_name: "b-1.c"
+    cc: clang-14
+    input: 
+    check_type: 3
+    test_str: "jne"
+    section_name: "<strcmp>:"
+    special_cause: UB
+
+b-1.c-clang-O3:
+    file_name: "b-1.c"
+    cc: clang-14
+    input: 
+    check_type: 3
+    test_str: "jne"
+    section_name: "<strcmp>:"
+    special_cause: UB
+
+b-1.c-clang-O2:
+    file_name: "b-1.c"
+    cc: clang-14
+    input: 
+    check_type: 3
+    test_str: "cmpq   $0x0"
+    section_name: "<strcmp>:"
+    special_cause: UB
+
+b-1.c-clang-O1:
+    file_name: "b-1.c"
+    cc: clang-14
+    input: 
+    check_type: 3
+    test_str: "cmpq   $0x0"
+    section_name: "<strcmp>:"
+    special_cause: UB
+
+b-1.c-clang-O0:
+    file_name: "b-1.c"
+    cc: clang-14
+    input: 
+    check_type: 3
+    test_str: "cmpq   $0x0"
+    section_name: "<strcmp>:"
+    special_cause: UB
