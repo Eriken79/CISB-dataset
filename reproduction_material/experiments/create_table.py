@@ -1,5 +1,7 @@
 import pandas as pd
 import matplotlib.pyplot as plt
+import matplotlib.pyplot as plt
+from matplotlib.lines import Line2D
 
 symbol_map = {0: r"\textcolor{red}{$\times$}", 
               1: r"\textcolor{green}{$\checkmark$}", 
@@ -23,11 +25,21 @@ print(pivot_table)
 
 
 # Define colors and symbols for plotting
-symbol_map = {0: ("X", "red"), 
-              1: ("$", "green"), 
+symbol_map = {0: ("✗", "red"), 
+              1: ("✓", "green"), 
               2: ("?", "blue")}
 
+
 fig, ax = plt.subplots(figsize=(10, 6))
+legend_elements = [
+    Line2D([0], [0], marker='None', color='green', label='✓: CISB Present', linestyle='None', markersize=10),
+    Line2D([0], [0], marker='None', color='red', label='✗: CISB Not Present', linestyle='None', markersize=10),
+    Line2D([0], [0], marker='None', color='blue', label='?: Test Case Invalid', linestyle='None', markersize=10)
+]
+
+plt.legend(handles=legend_elements, loc='lower center', bbox_to_anchor=(0.5, -0.30),
+           ncol=3, frameon=False)
+fig.subplots_adjust(bottom=0.3)
 
 # Iterate through the DataFrame and plot text
 for i, row in enumerate(pivot_table.index):
@@ -47,7 +59,7 @@ ax.set_ylim(-0.5, len(pivot_table.index)-0.5)
 ax.invert_yaxis()  # Make sure first row appears at the top
 ax.set_xlabel("Test ID")
 ax.set_ylabel("Configuration")
-ax.set_title("Test Results")
+ax.set_title("Initial Experiment (ARM)")
 
 # Save figure as PDF for LaTeX
 plt.savefig("./figure_out_arm/experiment_1_arm.pdf", bbox_inches="tight", dpi=300)

@@ -43,15 +43,6 @@ b-1.c-gcc-O0:
     section_name: "<strcmp>:"
     special_cause: UB
 
-b-1.c-clang-O4:
-    file_name: "b-1.c"
-    cc: clang-14
-    input: 
-    check_type: 3
-    test_str: "jne"
-    section_name: "<strcmp>:"
-    special_cause: UB
-
 b-1.c-clang-O3:
     file_name: "b-1.c"
     cc: clang-14
@@ -132,15 +123,6 @@ b-2.c-gcc-O0:
     check_type: 1
     test_str: ok
     section_name: 
-    special_cause: UB
-
-b-2.c-clang-O4:
-    file_name: "b-2.c"
-    cc: clang-14
-    input: 0
-    check_type: 3
-    test_str: "cmp"
-    section_name: "<test>:"
     special_cause: UB
 
 b-2.c-clang-O3:
@@ -225,15 +207,6 @@ b-3.c-gcc-O0:
     section_name: 
     special_cause: UB
 
-b-3.c-clang-O4:
-    file_name: "b-3.c"
-    cc: clang-14
-    input:
-    check_type: 1
-    test_str: "done"
-    section_name: 
-    special_cause: UB
-
 
 b-3.c-clang-O3:
     file_name: "b-3.c"
@@ -310,15 +283,6 @@ b-4.c-gcc-O1:
 b-4.c-gcc-O0:
     file_name: "b-4.c"
     cc: gcc-12
-    input: 2147483647
-    check_type: 2
-    test_str: ok
-    section_name:
-    special_cause: UB
-
-b-4.c-clang-O4:
-    file_name: "b-4.c"
-    cc: clang-14
     input: 2147483647
     check_type: 2
     test_str: ok
@@ -408,15 +372,6 @@ b-5.c-gcc-O0:
     section_name:
     special_cause: UB
 
-b-5.c-clang-O4:
-    file_name: "b-5.c"
-    cc: clang-14
-    input:
-    check_type: 1
-    test_str: "check 0"
-    section_name:
-    special_cause: UB
-
 
 b-5.c-clang-O3:
     file_name: "b-5.c"
@@ -500,15 +455,6 @@ b-6.c-gcc-O0:
     section_name:
     special_cause: UB
  
-b-6.c-clang-O4:
-    file_name: "b-6.c"
-    cc: clang-14
-    input:
-    check_type: 2
-    test_str: "buffer is NULL for second time"
-    section_name: 
-    special_cause: UB
-
    
 b-6.c-clang-O3:
     file_name: "b-6.c"
@@ -586,15 +532,6 @@ b-7.c-gcc-O1:
 b-7.c-gcc-O0:
     file_name: "b-7.c"
     cc: gcc-12
-    input: 255
-    check_type: 3
-    test_str: "cmp"
-    section_name: "<test>:"
-    special_cause: DB
-
-b-7.c-clang-O4:
-    file_name: "b-7.c"
-    cc: clang-14
     input: 255
     check_type: 3
     test_str: "cmp"
@@ -684,15 +621,6 @@ b-8.c-gcc-O0:
     section_name: "<bad_code>:"
     special_cause: UB
 
-b-8.c-clang-O4:
-    file_name: "b-8.c"
-    cc: clang-14
-    input: 0
-    check_type: 3
-    test_str: "test"
-    section_name: "<bad_code>:"
-    special_cause: UB
-
 
 b-8.c-clang-O3:
     file_name: "b-8.c"
@@ -770,15 +698,6 @@ b-9.c-gcc-O1:
 b-9.c-gcc-O0:
     file_name: "b-9.c"
     cc: gcc-12
-    input: 0
-    check_type: 2
-    test_str: "ok"
-    section_name:
-    special_cause: UB
-
-b-9.c-clang-O4:
-    file_name: "b-9.c"
-    cc: clang-14
     input: 0
     check_type: 2
     test_str: "ok"
@@ -868,15 +787,6 @@ b-10.c-gcc-O0:
     section_name: "<main>:"
     special_cause: UB
 
-b-10.c-clang-O4:
-    file_name: "b-10.c"
-    cc: clang-14
-    input: 0
-    check_type: 3
-    test_str: "cmp"
-    section_name: "<main>:"
-    special_cause: UB
-
 
 b-10.c-clang-O3:
     file_name: "b-10.c"
@@ -960,15 +870,6 @@ b-11.c-gcc-O0:
     section_name: "<main>:"
     special_cause: 
  
-b-11.c-clang-O4:
-    file_name: "b-11.c"
-    cc: clang-14
-    input:
-    check_type: 3
-    test_str: "cmp    $0xa"
-    section_name: "<main>:"
-    special_cause: UB
-
 
 b-11.c-clang-O3:
     file_name: "b-11.c"
@@ -1057,15 +958,6 @@ b-12.c-gcc-O0:
     default_option: "-pthread"
     special_cause: UB
 
-b-12.c-clang-O4:
-    file_name: "b-12.c"
-    cc: clang-14
-    input:
-    check_type: 6
-    test_str: "jmp\t.LBB1_1"
-    section_name: ".LBB1_1:"
-    default_option: "-pthread"
-    special_cause: UB
 
 
 b-12.c-clang-O3:
@@ -1154,15 +1046,6 @@ b-13.c-gcc-O0:
     section_name: "between TpcFingerNum+0x4 TpcFingerNum+0x8"
     special_cause: UB
 
-b-13.c-clang-O4:
-    file_name: "b-13.c"
-    cc: clang-14
-    input:
-    check_type: 5
-    test_str: "x, 12(%"
-    section_name: ".L5:"
-    special_cause: UB
-
 
 b-13.c-clang-O3:
     file_name: "b-13.c"
@@ -1239,15 +1122,6 @@ b-14.c-gcc-O1:
 b-14.c-gcc-O0:
     file_name: "b-14.c"
     cc: gcc-12
-    input:
-    check_type: 4
-    test_str: "puts"
-    section_name: "<main>:"
-    special_cause: UB
-
-b-14.c-clang-O4:
-    file_name: "b-14.c"
-    cc: clang-14
     input:
     check_type: 4
     test_str: "puts"
@@ -1337,15 +1211,6 @@ b-15.c-gcc-O0:
     section_name: "<memset>:"
     special_cause: UB
 
-b-15.c-clang-O4:
-    file_name: "b-15.c"
-    cc: clang-14
-    input:
-    check_type: 4
-    test_str: "call   1160 <memset>"
-    section_name: "<memset>:"
-    special_cause: UB
-
 
 b-15.c-clang-O3:
     file_name: "b-15.c"
@@ -1423,15 +1288,6 @@ b-16.c-gcc-O1:
 b-16.c-gcc-O0:
     file_name: "b-16.c"
     cc: gcc-12
-    input:
-    check_type: 1
-    test_str: "80 70 60 50 40 30 88 77 66 55 44 33"
-    section_name:
-    special_cause: UB
-
-b-16.c-clang-O4:
-    file_name: "b-16.c"
-    cc: clang-14
     input:
     check_type: 1
     test_str: "80 70 60 50 40 30 88 77 66 55 44 33"
@@ -1521,15 +1377,6 @@ b-20.c-gcc-O0:
     section_name: "<main>:"
     special_cause: UB
 
-b-20.c-clang-O4:
-    file_name: "b-20.c"
-    cc: clang-14
-    input:
-    check_type: 4
-    test_str: "panic"
-    section_name: "<main>:"
-    special_cause: UB
-
 
 b-20.c-clang-O3:
     file_name: "b-20.c"
@@ -1607,15 +1454,6 @@ b-21.c-gcc-O1:
 b-21.c-gcc-O0:
     file_name: "b-21.c"
     cc: gcc-12
-    input:
-    check_type: 3
-    test_str: "memset"
-    section_name: "<main>:"
-    special_cause: "Others"
-
-b-21.c-clang-O4:
-    file_name: "b-21.c"
-    cc: clang-14
     input:
     check_type: 3
     test_str: "memset"
@@ -1706,15 +1544,6 @@ b-22.c-gcc-O0:
     section_name: "movl   $0x0"
     special_cause: "Others"
 
-b-22.c-clang-O4:
-    file_name: "b-22.c"
-    cc: clang-14
-    input:
-    check_type: 5
-    test_str: "movl   $0x0"
-    section_name: "movl   $0x0"
-    special_cause: "Others"
-
 
 b-22.c-clang-O3:
     file_name: "b-22.c"
@@ -1792,15 +1621,6 @@ l-2.c-gcc-O1:
 l-2.c-gcc-O0:
     file_name: "l-2.c"
     cc: gcc-12
-    input:
-    check_type: 2
-    test_str: "0"
-    section_name:
-    special_cause: UB
-
-l-2.c-clang-O4:
-    file_name: "l-2.c"
-    cc: clang-14
     input:
     check_type: 2
     test_str: "0"
@@ -1891,15 +1711,6 @@ l-8.c-gcc-O0:
     special_cause: UB
 
 
-l-8.c-clang-O4:
-    file_name: "l-8.c"
-    cc: clang-14
-    input:
-    check_type: 3
-    test_str: "cmpl   $0x0,"
-    section_name: "<main>:"
-    special_cause: UB
-
 
 l-8.c-clang-O3:
     file_name: "l-8.c"
@@ -1977,15 +1788,6 @@ l-11.c-gcc-O1:
 l-11.c-gcc-O0:
     file_name: "l-11.c"
     cc: gcc-12
-    input:
-    check_type: 2
-    test_str: "16"
-    section_name:
-    special_cause: "Others"
-
-l-11.c-clang-O4:
-    file_name: "l-11.c"
-    cc: clang-14
     input:
     check_type: 2
     test_str: "16"
@@ -2075,15 +1877,6 @@ l-13.c-gcc-O0:
     section_name:
     special_cause: UB
 
-l-13.c-clang-O4:
-    file_name: "l-13.c"
-    cc: clang-14
-    input:
-    check_type: 1
-    test_str: "ok"
-    section_name:
-    special_cause: UB
-
 
 l-13.c-clang-O3:
     file_name: "l-13.c"
@@ -2167,15 +1960,6 @@ l-15.c-gcc-O0:
     section_name: "<main>:"
     special_cause: DB
 
-l-15.c-clang-O4:
-    file_name: "l-15.c"
-    cc: clang-14
-    input:
-    check_type: 3
-    test_str: "memset"
-    section_name: "<main>:"
-    special_cause: DB
-
 
 l-15.c-clang-O3:
     file_name: "l-15.c"
@@ -2213,15 +1997,6 @@ l-15.c-clang-O0:
     section_name: "<main>:"
     special_cause: DB
 
-l-15.c-clang-O0:
-    file_name: "l-15.c"
-    cc: clang-14
-    input:
-    check_type: 3
-    test_str: "memset"
-    section_name: "<main>:"
-    special_cause: DB
-
 l-18.c-gcc-O4:
     file_name: "l-18.c"
     cc: gcc-12
@@ -2230,7 +2005,6 @@ l-18.c-gcc-O4:
     test_str: "memset"
     section_name: "<foo>:"
     special_cause: "Environment assumption"
-
 
 l-18.c-gcc-O3:
     file_name: "l-18.c"
@@ -2262,15 +2036,6 @@ l-18.c-gcc-O1:
 l-18.c-gcc-O0:
     file_name: "l-18.c"
     cc: gcc-12
-    input:
-    check_type: 4
-    test_str: "memset"
-    section_name: "<foo>:"
-    special_cause: "Environment assumption"
-
-l-18.c-clang-O4:
-    file_name: "l-18.c"
-    cc: clang-14
     input:
     check_type: 4
     test_str: "memset"
@@ -2353,15 +2118,6 @@ l-19.c-gcc-O1:
 l-19.c-gcc-O0:
     file_name: "l-19.c"
     cc: gcc-12
-    input:
-    check_type: 1
-    test_str: "ok"
-    section_name:
-    special_cause: DB
-
-l-19.c-clang-O4:
-    file_name: "l-19.c"
-    cc: clang-14
     input:
     check_type: 1
     test_str: "ok"
@@ -2455,15 +2211,6 @@ l-25.c-gcc-O0:
     default_option: "-mbranch-protection=bti  -fcf-protection=none"
     special_cause: Others
 
-l-25.c-clang-O4:
-    file_name: "l-25.c"
-    cc: clang-14
-    input:
-    check_type: 6
-    test_str: ".L4"
-    section_name: ".L4"
-    default_option: "-mretpoline -fcf-protection=none"
-    special_cause: Others
 
 l-25.c-clang-O3:
     file_name: "l-25.c"
@@ -2562,15 +2309,6 @@ l-30.c-gcc-O0:
     default_option: "-pthread"
     special_cause: UB
 
-l-30.c-clang-O4:
-    file_name: "l-30.c"
-    cc: clang-14
-    input:
-    check_type: 2
-    test_str: "101 102"
-    section_name:
-    default_option: "-pthread"
-    special_cause: UB
 
 
 l-30.c-clang-O3:
@@ -2658,15 +2396,6 @@ l-37.c-gcc-O0:
     section_name: "<main>:"
     special_cause: "Others"
 
-l-37.c-clang-O4:
-    file_name: "l-37.c"
-    cc: clang-14
-    input:
-    check_type: 3
-    test_str: "add    $0x1"
-    section_name: "<main>:"
-    special_cause: "Others"
-
 
 l-37.c-clang-O3:
     file_name: "l-37.c"
@@ -2743,15 +2472,6 @@ l-43.c-gcc-O1:
 l-43.c-gcc-O0:
     file_name: "l-43.c"
     cc: gcc-12
-    input:
-    check_type: 4
-    test_str: "memset"
-    section_name: "<main>:"
-    special_cause: "Environment assumption"
-
-l-43.c-clang-O4:
-    file_name: "l-43.c"
-    cc: clang-14
     input:
     check_type: 4
     test_str: "memset"

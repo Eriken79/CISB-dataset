@@ -10,7 +10,7 @@ import csv
 from datetime import datetime
 
 arm_file_list = ['l-23.c', 'b-26.c']
-reproduce_set_path = '../testcases/'
+reproduce_set_path = '../eriks_testcases/'
 
 
 def ubsan_testing(cc, args, testcases_path, file_name, input = '', output = 'verbose'):
@@ -120,21 +120,21 @@ if __name__ == '__main__':
     parser.add_argument('-opt', default=None, type=argparse.FileType('r'), help='Users can choose whether or not to add options in testing.')
     args = parser.parse_args()
     #file = args.file.name.split('/')[-1]
-    folder_path = '../testcases'
+    folder_path = '../eriks_testcases'
     opti_levels = ['O0', 'O1', 'O2', 'O3', 'O4']
     ccs = ['gcc', 'clang']
     cisb_found = 0
     cisb_not_found = 0
-    with open('./csv_files/experiment_1.csv', mode='w', newline='') as csv_file:
+    with open('./csv_files/experiment_2.csv', mode='w', newline='') as csv_file:
         writer = csv.writer(csv_file)
         writer.writerow(['exp_id', 'test_id', 'compiler', 'optimization_level', 'architecture', 'output', 'timestamp'])
         for file_name in os.listdir(folder_path):
             print(file_name)
             for cc in ccs:
                 for opti_level in opti_levels:
+                    #opti_level = 'O0'
                     if opti_level == 'O4' and cc == 'clang':
                         continue
-                    #opti_level = 'O0'
                     file = ''
                     #cc = args.cc
                     argss = ''
@@ -145,13 +145,13 @@ if __name__ == '__main__':
                     #    f.close()
                     file = file_name + '-' + cc + '-' + opti_level
                     args = ' -' + opti_level + ' ' + argss
-                    with open('exp1config.yml', 'r') as f:
+                    with open('exp2config.yml', 'r') as f:
                         # get config for files
                         
                         configs = yaml.safe_load(f.read())
                         if file not in configs:
                             print('Error: can\'t find ' + file + ' in the config file!')
-                            writer.writerow(['exp_1', file_name, cc, opti_level, 'arm', '2', datetime.now()])
+                            writer.writerow(['exp_2', file_name, cc, opti_level, 'arm', '2', datetime.now()])
                             continue
                         config = configs[file]
                         file_name = config['file_name']
@@ -196,12 +196,12 @@ if __name__ == '__main__':
                             if not bug_not_trigger(check_type, input, test_str, section_start, section_end):
                                 print(check_type, input, test_str, section_start, section_end)
                                 print('One CISB here!')
-                                writer.writerow(['exp_1', file_name, cc, opti_level, 'arm', '1', datetime.now()])
+                                writer.writerow(['exp_2', file_name, cc, opti_level, 'arm', '1', datetime.now()])
                                 cisb_found += 1
                             else:
                                 print(check_type, input, test_str, section_start, section_end)
                                 print('No CISB here!')
-                                writer.writerow(['exp_1', file_name, cc, opti_level, 'arm', '0', datetime.now()])
+                                writer.writerow(['exp_2', file_name, cc, opti_level, 'arm', '0', datetime.now()])
                                 cisb_not_found += 1
         print(cisb_found)
         print(cisb_not_found)
