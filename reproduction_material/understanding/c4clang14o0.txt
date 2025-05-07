@@ -1,0 +1,344 @@
+
+./cast-4-clang-14-O0:     file format elf64-x86-64
+
+
+Disassembly of section .init:
+
+0000000000001000 <_init>:
+    1000:	f3 0f 1e fa          	endbr64
+    1004:	48 83 ec 08          	sub    $0x8,%rsp
+    1008:	48 8b 05 c1 2f 00 00 	mov    0x2fc1(%rip),%rax        # 3fd0 <__gmon_start__@Base>
+    100f:	48 85 c0             	test   %rax,%rax
+    1012:	74 02                	je     1016 <_init+0x16>
+    1014:	ff d0                	call   *%rax
+    1016:	48 83 c4 08          	add    $0x8,%rsp
+    101a:	c3                   	ret
+
+Disassembly of section .plt:
+
+0000000000001020 <printf@plt-0x10>:
+    1020:	ff 35 ca 2f 00 00    	push   0x2fca(%rip)        # 3ff0 <_GLOBAL_OFFSET_TABLE_+0x8>
+    1026:	ff 25 cc 2f 00 00    	jmp    *0x2fcc(%rip)        # 3ff8 <_GLOBAL_OFFSET_TABLE_+0x10>
+    102c:	0f 1f 40 00          	nopl   0x0(%rax)
+
+0000000000001030 <printf@plt>:
+    1030:	ff 25 ca 2f 00 00    	jmp    *0x2fca(%rip)        # 4000 <printf@GLIBC_2.2.5>
+    1036:	68 00 00 00 00       	push   $0x0
+    103b:	e9 e0 ff ff ff       	jmp    1020 <_init+0x20>
+
+0000000000001040 <memset@plt>:
+    1040:	ff 25 c2 2f 00 00    	jmp    *0x2fc2(%rip)        # 4008 <memset@GLIBC_2.2.5>
+    1046:	68 01 00 00 00       	push   $0x1
+    104b:	e9 d0 ff ff ff       	jmp    1020 <_init+0x20>
+
+Disassembly of section .plt.got:
+
+0000000000001050 <__cxa_finalize@plt>:
+    1050:	ff 25 8a 2f 00 00    	jmp    *0x2f8a(%rip)        # 3fe0 <__cxa_finalize@GLIBC_2.2.5>
+    1056:	66 90                	xchg   %ax,%ax
+
+Disassembly of section .text:
+
+0000000000001060 <_start>:
+    1060:	f3 0f 1e fa          	endbr64
+    1064:	31 ed                	xor    %ebp,%ebp
+    1066:	49 89 d1             	mov    %rdx,%r9
+    1069:	5e                   	pop    %rsi
+    106a:	48 89 e2             	mov    %rsp,%rdx
+    106d:	48 83 e4 f0          	and    $0xfffffffffffffff0,%rsp
+    1071:	50                   	push   %rax
+    1072:	54                   	push   %rsp
+    1073:	45 31 c0             	xor    %r8d,%r8d
+    1076:	31 c9                	xor    %ecx,%ecx
+    1078:	48 8d 3d d1 00 00 00 	lea    0xd1(%rip),%rdi        # 1150 <main>
+    107f:	ff 15 3b 2f 00 00    	call   *0x2f3b(%rip)        # 3fc0 <__libc_start_main@GLIBC_2.34>
+    1085:	f4                   	hlt
+    1086:	66 2e 0f 1f 84 00 00 	cs nopw 0x0(%rax,%rax,1)
+    108d:	00 00 00 
+
+0000000000001090 <deregister_tm_clones>:
+    1090:	48 8d 3d d1 2f 00 00 	lea    0x2fd1(%rip),%rdi        # 4068 <__TMC_END__>
+    1097:	48 8d 05 ca 2f 00 00 	lea    0x2fca(%rip),%rax        # 4068 <__TMC_END__>
+    109e:	48 39 f8             	cmp    %rdi,%rax
+    10a1:	74 15                	je     10b8 <deregister_tm_clones+0x28>
+    10a3:	48 8b 05 1e 2f 00 00 	mov    0x2f1e(%rip),%rax        # 3fc8 <_ITM_deregisterTMCloneTable@Base>
+    10aa:	48 85 c0             	test   %rax,%rax
+    10ad:	74 09                	je     10b8 <deregister_tm_clones+0x28>
+    10af:	ff e0                	jmp    *%rax
+    10b1:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+    10b8:	c3                   	ret
+    10b9:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+
+00000000000010c0 <register_tm_clones>:
+    10c0:	48 8d 3d a1 2f 00 00 	lea    0x2fa1(%rip),%rdi        # 4068 <__TMC_END__>
+    10c7:	48 8d 35 9a 2f 00 00 	lea    0x2f9a(%rip),%rsi        # 4068 <__TMC_END__>
+    10ce:	48 29 fe             	sub    %rdi,%rsi
+    10d1:	48 89 f0             	mov    %rsi,%rax
+    10d4:	48 c1 ee 3f          	shr    $0x3f,%rsi
+    10d8:	48 c1 f8 03          	sar    $0x3,%rax
+    10dc:	48 01 c6             	add    %rax,%rsi
+    10df:	48 d1 fe             	sar    $1,%rsi
+    10e2:	74 14                	je     10f8 <register_tm_clones+0x38>
+    10e4:	48 8b 05 ed 2e 00 00 	mov    0x2eed(%rip),%rax        # 3fd8 <_ITM_registerTMCloneTable@Base>
+    10eb:	48 85 c0             	test   %rax,%rax
+    10ee:	74 08                	je     10f8 <register_tm_clones+0x38>
+    10f0:	ff e0                	jmp    *%rax
+    10f2:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+    10f8:	c3                   	ret
+    10f9:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+
+0000000000001100 <__do_global_dtors_aux>:
+    1100:	f3 0f 1e fa          	endbr64
+    1104:	80 3d 5d 2f 00 00 00 	cmpb   $0x0,0x2f5d(%rip)        # 4068 <__TMC_END__>
+    110b:	75 2b                	jne    1138 <__do_global_dtors_aux+0x38>
+    110d:	55                   	push   %rbp
+    110e:	48 83 3d ca 2e 00 00 	cmpq   $0x0,0x2eca(%rip)        # 3fe0 <__cxa_finalize@GLIBC_2.2.5>
+    1115:	00 
+    1116:	48 89 e5             	mov    %rsp,%rbp
+    1119:	74 0c                	je     1127 <__do_global_dtors_aux+0x27>
+    111b:	48 8b 3d f6 2e 00 00 	mov    0x2ef6(%rip),%rdi        # 4018 <__dso_handle>
+    1122:	e8 29 ff ff ff       	call   1050 <__cxa_finalize@plt>
+    1127:	e8 64 ff ff ff       	call   1090 <deregister_tm_clones>
+    112c:	c6 05 35 2f 00 00 01 	movb   $0x1,0x2f35(%rip)        # 4068 <__TMC_END__>
+    1133:	5d                   	pop    %rbp
+    1134:	c3                   	ret
+    1135:	0f 1f 00             	nopl   (%rax)
+    1138:	c3                   	ret
+    1139:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+
+0000000000001140 <frame_dummy>:
+    1140:	f3 0f 1e fa          	endbr64
+    1144:	e9 77 ff ff ff       	jmp    10c0 <register_tm_clones>
+    1149:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+
+0000000000001150 <main>:
+    1150:	55                   	push   %rbp
+    1151:	48 89 e5             	mov    %rsp,%rbp
+    1154:	48 83 ec 20          	sub    $0x20,%rsp
+    1158:	c7 45 fc 00 00 00 00 	movl   $0x0,-0x4(%rbp)
+    115f:	48 8d 05 fa 2e 00 00 	lea    0x2efa(%rip),%rax        # 4060 <dst_mac>
+    1166:	48 89 45 f0          	mov    %rax,-0x10(%rbp)
+    116a:	c6 45 ef 01          	movb   $0x1,-0x11(%rbp)
+    116e:	8a 45 ef             	mov    -0x11(%rbp),%al
+    1171:	48 8b 75 f0          	mov    -0x10(%rbp),%rsi
+    1175:	0f b6 f8             	movzbl %al,%edi
+    1178:	e8 13 00 00 00       	call   1190 <IPsecCacheBuildImpl>
+    117d:	31 c0                	xor    %eax,%eax
+    117f:	48 83 c4 20          	add    $0x20,%rsp
+    1183:	5d                   	pop    %rbp
+    1184:	c3                   	ret
+    1185:	66 2e 0f 1f 84 00 00 	cs nopw 0x0(%rax,%rax,1)
+    118c:	00 00 00 
+    118f:	90                   	nop
+
+0000000000001190 <IPsecCacheBuildImpl>:
+    1190:	55                   	push   %rbp
+    1191:	48 89 e5             	mov    %rsp,%rbp
+    1194:	48 81 ec a0 01 00 00 	sub    $0x1a0,%rsp
+    119b:	40 88 f8             	mov    %dil,%al
+    119e:	88 85 7f ff ff ff    	mov    %al,-0x81(%rbp)
+    11a4:	48 89 b5 70 ff ff ff 	mov    %rsi,-0x90(%rbp)
+    11ab:	48 8d bd 70 fe ff ff 	lea    -0x190(%rbp),%rdi
+    11b2:	31 f6                	xor    %esi,%esi
+    11b4:	ba 00 01 00 00       	mov    $0x100,%edx
+    11b9:	e8 82 fe ff ff       	call   1040 <memset@plt>
+    11be:	48 8d 85 70 fe ff ff 	lea    -0x190(%rbp),%rax
+    11c5:	48 05 00 01 00 00    	add    $0x100,%rax
+    11cb:	48 89 85 68 fe ff ff 	mov    %rax,-0x198(%rbp)
+    11d2:	0f b6 85 7f ff ff ff 	movzbl -0x81(%rbp),%eax
+    11d9:	89 c1                	mov    %eax,%ecx
+    11db:	48 8d 05 3e 2e 00 00 	lea    0x2e3e(%rip),%rax        # 4020 <DATA_UNI_MAC_l>
+    11e2:	48 8b 34 c8          	mov    (%rax,%rcx,8),%rsi
+    11e6:	48 8d 3d 17 0e 00 00 	lea    0xe17(%rip),%rdi        # 2004 <_IO_stdin_used+0x4>
+    11ed:	e8 2e 02 00 00       	call   1420 <pmac64>
+    11f2:	48 8b 85 70 ff ff ff 	mov    -0x90(%rbp),%rax
+    11f9:	48 8b 30             	mov    (%rax),%rsi
+    11fc:	48 8d 3d 06 0e 00 00 	lea    0xe06(%rip),%rdi        # 2009 <_IO_stdin_used+0x9>
+    1203:	e8 18 02 00 00       	call   1420 <pmac64>
+    1208:	48 8b 85 68 fe ff ff 	mov    -0x198(%rbp),%rax
+    120f:	48 83 c0 fa          	add    $0xfffffffffffffffa,%rax
+    1213:	48 89 85 68 fe ff ff 	mov    %rax,-0x198(%rbp)
+    121a:	0f b6 85 7f ff ff ff 	movzbl -0x81(%rbp),%eax
+    1221:	48 8d 0d f8 2d 00 00 	lea    0x2df8(%rip),%rcx        # 4020 <DATA_UNI_MAC_l>
+    1228:	48 c1 e0 03          	shl    $0x3,%rax
+    122c:	48 01 c1             	add    %rax,%rcx
+    122f:	48 8b 85 68 fe ff ff 	mov    -0x198(%rbp),%rax
+    1236:	48 89 4d b8          	mov    %rcx,-0x48(%rbp)
+    123a:	48 89 45 b0          	mov    %rax,-0x50(%rbp)
+    123e:	c7 45 ac 06 00 00 00 	movl   $0x6,-0x54(%rbp)
+    1245:	48 8b 45 b8          	mov    -0x48(%rbp),%rax
+    1249:	48 8b 00             	mov    (%rax),%rax
+    124c:	48 89 45 a0          	mov    %rax,-0x60(%rbp)
+    1250:	48 8d 55 a0          	lea    -0x60(%rbp),%rdx
+    1254:	48 8b 4d b0          	mov    -0x50(%rbp),%rcx
+    1258:	8b 45 ac             	mov    -0x54(%rbp),%eax
+    125b:	48 89 55 d8          	mov    %rdx,-0x28(%rbp)
+    125f:	48 89 4d d0          	mov    %rcx,-0x30(%rbp)
+    1263:	89 45 cc             	mov    %eax,-0x34(%rbp)
+    1266:	8b 45 cc             	mov    -0x34(%rbp),%eax
+    1269:	c1 e8 01             	shr    $0x1,%eax
+    126c:	89 45 c8             	mov    %eax,-0x38(%rbp)
+    126f:	8b 45 cc             	mov    -0x34(%rbp),%eax
+    1272:	83 e0 01             	and    $0x1,%eax
+    1275:	89 45 c0             	mov    %eax,-0x40(%rbp)
+    1278:	c7 45 c4 00 00 00 00 	movl   $0x0,-0x3c(%rbp)
+    127f:	8b 45 c4             	mov    -0x3c(%rbp),%eax
+    1282:	3b 45 c8             	cmp    -0x38(%rbp),%eax
+    1285:	0f 83 34 00 00 00    	jae    12bf <IPsecCacheBuildImpl+0x12f>
+    128b:	48 8b 45 d8          	mov    -0x28(%rbp),%rax
+    128f:	66 8b 08             	mov    (%rax),%cx
+    1292:	48 8b 45 d0          	mov    -0x30(%rbp),%rax
+    1296:	66 89 08             	mov    %cx,(%rax)
+    1299:	48 8b 45 d0          	mov    -0x30(%rbp),%rax
+    129d:	48 83 c0 02          	add    $0x2,%rax
+    12a1:	48 89 45 d0          	mov    %rax,-0x30(%rbp)
+    12a5:	48 8b 45 d8          	mov    -0x28(%rbp),%rax
+    12a9:	48 83 c0 02          	add    $0x2,%rax
+    12ad:	48 89 45 d8          	mov    %rax,-0x28(%rbp)
+    12b1:	8b 45 c4             	mov    -0x3c(%rbp),%eax
+    12b4:	83 c0 01             	add    $0x1,%eax
+    12b7:	89 45 c4             	mov    %eax,-0x3c(%rbp)
+    12ba:	e9 c0 ff ff ff       	jmp    127f <IPsecCacheBuildImpl+0xef>
+    12bf:	c7 45 c4 00 00 00 00 	movl   $0x0,-0x3c(%rbp)
+    12c6:	8b 45 c4             	mov    -0x3c(%rbp),%eax
+    12c9:	3b 45 c0             	cmp    -0x40(%rbp),%eax
+    12cc:	0f 83 32 00 00 00    	jae    1304 <IPsecCacheBuildImpl+0x174>
+    12d2:	48 8b 45 d8          	mov    -0x28(%rbp),%rax
+    12d6:	8a 08                	mov    (%rax),%cl
+    12d8:	48 8b 45 d0          	mov    -0x30(%rbp),%rax
+    12dc:	88 08                	mov    %cl,(%rax)
+    12de:	48 8b 45 d0          	mov    -0x30(%rbp),%rax
+    12e2:	48 83 c0 01          	add    $0x1,%rax
+    12e6:	48 89 45 d0          	mov    %rax,-0x30(%rbp)
+    12ea:	48 8b 45 d8          	mov    -0x28(%rbp),%rax
+    12ee:	48 83 c0 01          	add    $0x1,%rax
+    12f2:	48 89 45 d8          	mov    %rax,-0x28(%rbp)
+    12f6:	8b 45 c4             	mov    -0x3c(%rbp),%eax
+    12f9:	83 c0 01             	add    $0x1,%eax
+    12fc:	89 45 c4             	mov    %eax,-0x3c(%rbp)
+    12ff:	e9 c2 ff ff ff       	jmp    12c6 <IPsecCacheBuildImpl+0x136>
+    1304:	48 8b 85 68 fe ff ff 	mov    -0x198(%rbp),%rax
+    130b:	48 83 c0 fa          	add    $0xfffffffffffffffa,%rax
+    130f:	48 89 85 68 fe ff ff 	mov    %rax,-0x198(%rbp)
+    1316:	48 8b 8d 70 ff ff ff 	mov    -0x90(%rbp),%rcx
+    131d:	48 8b 85 68 fe ff ff 	mov    -0x198(%rbp),%rax
+    1324:	48 89 4d 98          	mov    %rcx,-0x68(%rbp)
+    1328:	48 89 45 90          	mov    %rax,-0x70(%rbp)
+    132c:	c7 45 8c 06 00 00 00 	movl   $0x6,-0x74(%rbp)
+    1333:	48 8b 45 98          	mov    -0x68(%rbp),%rax
+    1337:	48 8b 00             	mov    (%rax),%rax
+    133a:	48 89 45 80          	mov    %rax,-0x80(%rbp)
+    133e:	48 8d 55 80          	lea    -0x80(%rbp),%rdx
+    1342:	48 8b 4d 90          	mov    -0x70(%rbp),%rcx
+    1346:	8b 45 8c             	mov    -0x74(%rbp),%eax
+    1349:	48 89 55 f8          	mov    %rdx,-0x8(%rbp)
+    134d:	48 89 4d f0          	mov    %rcx,-0x10(%rbp)
+    1351:	89 45 ec             	mov    %eax,-0x14(%rbp)
+    1354:	8b 45 ec             	mov    -0x14(%rbp),%eax
+    1357:	c1 e8 01             	shr    $0x1,%eax
+    135a:	89 45 e8             	mov    %eax,-0x18(%rbp)
+    135d:	8b 45 ec             	mov    -0x14(%rbp),%eax
+    1360:	83 e0 01             	and    $0x1,%eax
+    1363:	89 45 e0             	mov    %eax,-0x20(%rbp)
+    1366:	c7 45 e4 00 00 00 00 	movl   $0x0,-0x1c(%rbp)
+    136d:	8b 45 e4             	mov    -0x1c(%rbp),%eax
+    1370:	3b 45 e8             	cmp    -0x18(%rbp),%eax
+    1373:	0f 83 34 00 00 00    	jae    13ad <IPsecCacheBuildImpl+0x21d>
+    1379:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+    137d:	66 8b 08             	mov    (%rax),%cx
+    1380:	48 8b 45 f0          	mov    -0x10(%rbp),%rax
+    1384:	66 89 08             	mov    %cx,(%rax)
+    1387:	48 8b 45 f0          	mov    -0x10(%rbp),%rax
+    138b:	48 83 c0 02          	add    $0x2,%rax
+    138f:	48 89 45 f0          	mov    %rax,-0x10(%rbp)
+    1393:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+    1397:	48 83 c0 02          	add    $0x2,%rax
+    139b:	48 89 45 f8          	mov    %rax,-0x8(%rbp)
+    139f:	8b 45 e4             	mov    -0x1c(%rbp),%eax
+    13a2:	83 c0 01             	add    $0x1,%eax
+    13a5:	89 45 e4             	mov    %eax,-0x1c(%rbp)
+    13a8:	e9 c0 ff ff ff       	jmp    136d <IPsecCacheBuildImpl+0x1dd>
+    13ad:	c7 45 e4 00 00 00 00 	movl   $0x0,-0x1c(%rbp)
+    13b4:	8b 45 e4             	mov    -0x1c(%rbp),%eax
+    13b7:	3b 45 e0             	cmp    -0x20(%rbp),%eax
+    13ba:	0f 83 32 00 00 00    	jae    13f2 <IPsecCacheBuildImpl+0x262>
+    13c0:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+    13c4:	8a 08                	mov    (%rax),%cl
+    13c6:	48 8b 45 f0          	mov    -0x10(%rbp),%rax
+    13ca:	88 08                	mov    %cl,(%rax)
+    13cc:	48 8b 45 f0          	mov    -0x10(%rbp),%rax
+    13d0:	48 83 c0 01          	add    $0x1,%rax
+    13d4:	48 89 45 f0          	mov    %rax,-0x10(%rbp)
+    13d8:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+    13dc:	48 83 c0 01          	add    $0x1,%rax
+    13e0:	48 89 45 f8          	mov    %rax,-0x8(%rbp)
+    13e4:	8b 45 e4             	mov    -0x1c(%rbp),%eax
+    13e7:	83 c0 01             	add    $0x1,%eax
+    13ea:	89 45 e4             	mov    %eax,-0x1c(%rbp)
+    13ed:	e9 c2 ff ff ff       	jmp    13b4 <IPsecCacheBuildImpl+0x224>
+    13f2:	48 8b b5 68 fe ff ff 	mov    -0x198(%rbp),%rsi
+    13f9:	48 8d 3d 0e 0c 00 00 	lea    0xc0e(%rip),%rdi        # 200e <_IO_stdin_used+0xe>
+    1400:	ba 0c 00 00 00       	mov    $0xc,%edx
+    1405:	e8 46 00 00 00       	call   1450 <pmac>
+    140a:	48 81 c4 a0 01 00 00 	add    $0x1a0,%rsp
+    1411:	5d                   	pop    %rbp
+    1412:	c3                   	ret
+    1413:	66 2e 0f 1f 84 00 00 	cs nopw 0x0(%rax,%rax,1)
+    141a:	00 00 00 
+    141d:	0f 1f 00             	nopl   (%rax)
+
+0000000000001420 <pmac64>:
+    1420:	55                   	push   %rbp
+    1421:	48 89 e5             	mov    %rsp,%rbp
+    1424:	48 83 ec 10          	sub    $0x10,%rsp
+    1428:	48 89 7d f8          	mov    %rdi,-0x8(%rbp)
+    142c:	48 89 75 f0          	mov    %rsi,-0x10(%rbp)
+    1430:	48 8b 75 f8          	mov    -0x8(%rbp),%rsi
+    1434:	48 8b 55 f0          	mov    -0x10(%rbp),%rdx
+    1438:	48 8d 3d d6 0b 00 00 	lea    0xbd6(%rip),%rdi        # 2015 <_IO_stdin_used+0x15>
+    143f:	b0 00                	mov    $0x0,%al
+    1441:	e8 ea fb ff ff       	call   1030 <printf@plt>
+    1446:	48 83 c4 10          	add    $0x10,%rsp
+    144a:	5d                   	pop    %rbp
+    144b:	c3                   	ret
+    144c:	0f 1f 40 00          	nopl   0x0(%rax)
+
+0000000000001450 <pmac>:
+    1450:	55                   	push   %rbp
+    1451:	48 89 e5             	mov    %rsp,%rbp
+    1454:	48 83 ec 20          	sub    $0x20,%rsp
+    1458:	48 89 7d f8          	mov    %rdi,-0x8(%rbp)
+    145c:	48 89 75 f0          	mov    %rsi,-0x10(%rbp)
+    1460:	89 55 ec             	mov    %edx,-0x14(%rbp)
+    1463:	48 8b 75 f8          	mov    -0x8(%rbp),%rsi
+    1467:	48 8d 3d b2 0b 00 00 	lea    0xbb2(%rip),%rdi        # 2020 <_IO_stdin_used+0x20>
+    146e:	b0 00                	mov    $0x0,%al
+    1470:	e8 bb fb ff ff       	call   1030 <printf@plt>
+    1475:	c7 45 e8 00 00 00 00 	movl   $0x0,-0x18(%rbp)
+    147c:	8b 45 e8             	mov    -0x18(%rbp),%eax
+    147f:	3b 45 ec             	cmp    -0x14(%rbp),%eax
+    1482:	0f 8d 28 00 00 00    	jge    14b0 <pmac+0x60>
+    1488:	48 8b 45 f0          	mov    -0x10(%rbp),%rax
+    148c:	48 63 4d e8          	movslq -0x18(%rbp),%rcx
+    1490:	0f b6 34 08          	movzbl (%rax,%rcx,1),%esi
+    1494:	48 8d 3d 89 0b 00 00 	lea    0xb89(%rip),%rdi        # 2024 <_IO_stdin_used+0x24>
+    149b:	b0 00                	mov    $0x0,%al
+    149d:	e8 8e fb ff ff       	call   1030 <printf@plt>
+    14a2:	8b 45 e8             	mov    -0x18(%rbp),%eax
+    14a5:	83 c0 01             	add    $0x1,%eax
+    14a8:	89 45 e8             	mov    %eax,-0x18(%rbp)
+    14ab:	e9 cc ff ff ff       	jmp    147c <pmac+0x2c>
+    14b0:	48 8d 3d 67 0b 00 00 	lea    0xb67(%rip),%rdi        # 201e <_IO_stdin_used+0x1e>
+    14b7:	b0 00                	mov    $0x0,%al
+    14b9:	e8 72 fb ff ff       	call   1030 <printf@plt>
+    14be:	48 83 c4 20          	add    $0x20,%rsp
+    14c2:	5d                   	pop    %rbp
+    14c3:	c3                   	ret
+
+Disassembly of section .fini:
+
+00000000000014c4 <_fini>:
+    14c4:	f3 0f 1e fa          	endbr64
+    14c8:	48 83 ec 08          	sub    $0x8,%rsp
+    14cc:	48 83 c4 08          	add    $0x8,%rsp
+    14d0:	c3                   	ret

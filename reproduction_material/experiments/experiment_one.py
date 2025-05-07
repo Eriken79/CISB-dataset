@@ -133,6 +133,8 @@ if __name__ == '__main__':
             for cc in ccs:
                 for opti_level in opti_levels:
                     #opti_level = 'O0'
+                    if opti_level == 'O4' and cc == 'clang':
+                        continue
                     file = ''
                     #cc = args.cc
                     argss = ''

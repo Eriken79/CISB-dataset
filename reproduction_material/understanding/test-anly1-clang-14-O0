@@ -1,0 +1,165 @@
+	.text
+	.file	"test-anly1.c"
+	.globl	main                            # -- Begin function main
+	.p2align	4, 0x90
+	.type	main,@function
+main:                                   # @main
+	.cfi_startproc
+# %bb.0:
+	pushq	%rbp
+	.cfi_def_cfa_offset 16
+	.cfi_offset %rbp, -16
+	movq	%rsp, %rbp
+	.cfi_def_cfa_register %rbp
+	subq	$80, %rsp
+	movl	$0, -4(%rbp)
+	leaq	-48(%rbp), %rdi
+	movl	$65, %esi
+	movl	$16, %edx
+	callq	memset@PLT
+	leaq	-64(%rbp), %rdi
+	movl	$66, %esi
+	movl	$16, %edx
+	callq	memset@PLT
+	leaq	.L.str(%rip), %rdi
+	movl	$16, %esi
+	movb	$0, %al
+	callq	printf@PLT
+	xorl	%eax, %eax
+	movl	%eax, %edi
+	callq	fflush@PLT
+	movq	$16, -24(%rbp)
+	leaq	-48(%rbp), %rdi
+	callq	strlen@PLT
+	movq	%rax, -16(%rbp)
+	leaq	-48(%rbp), %rdi
+	callq	strlen@PLT
+	movq	%rax, %rsi
+	leaq	-48(%rbp), %rdx
+	leaq	.L.str.1(%rip), %rdi
+	movb	$0, %al
+	callq	printf@PLT
+	leaq	-64(%rbp), %rdi
+	callq	strlen@PLT
+	movq	%rax, %rsi
+	leaq	-64(%rbp), %rdx
+	leaq	.L.str.2(%rip), %rdi
+	movb	$0, %al
+	callq	printf@PLT
+	movq	-24(%rbp), %rsi
+	leaq	.L.str.3(%rip), %rdi
+	movb	$0, %al
+	callq	printf@PLT
+	movq	-16(%rbp), %rsi
+	leaq	.L.str.4(%rip), %rdi
+	movb	$0, %al
+	callq	printf@PLT
+	movq	-16(%rbp), %rax
+	cmpq	-24(%rbp), %rax
+	jb	.LBB0_2
+# %bb.1:
+	movq	-24(%rbp), %rax
+	subq	$1, %rax
+	movq	%rax, -80(%rbp)                 # 8-byte Spill
+	jmp	.LBB0_3
+.LBB0_2:
+	movq	-16(%rbp), %rax
+	movq	%rax, -80(%rbp)                 # 8-byte Spill
+.LBB0_3:
+	movq	-80(%rbp), %rax                 # 8-byte Reload
+	movq	%rax, -72(%rbp)
+	movq	-72(%rbp), %rsi
+	leaq	.L.str.5(%rip), %rdi
+	movb	$0, %al
+	callq	printf@PLT
+	leaq	-48(%rbp), %rdi
+	leaq	-64(%rbp), %rsi
+	movq	-72(%rbp), %rdx
+	callq	memcpy@PLT
+	movq	-72(%rbp), %rax
+	movb	$0, -64(%rbp,%rax)
+	leaq	-64(%rbp), %rdi
+	callq	strlen@PLT
+	cmpq	$0, %rax
+	je	.LBB0_5
+# %bb.4:
+	leaq	.L.str.6(%rip), %rdi
+	callq	puts@PLT
+.LBB0_5:
+	leaq	-64(%rbp), %rdi
+	callq	strlen@PLT
+	movq	%rax, %rsi
+	leaq	.L.str.7(%rip), %rdi
+	movb	$0, %al
+	callq	printf@PLT
+	xorl	%eax, %eax
+	movl	%eax, %edi
+	callq	fflush@PLT
+	xorl	%eax, %eax
+	movl	%eax, %edi
+	callq	fflush@PLT
+	leaq	.L.str.8(%rip), %rdi
+	movb	$0, %al
+	callq	printf@PLT
+	xorl	%eax, %eax
+	addq	$80, %rsp
+	popq	%rbp
+	.cfi_def_cfa %rsp, 8
+	retq
+.Lfunc_end0:
+	.size	main, .Lfunc_end0-main
+	.cfi_endproc
+                                        # -- End function
+	.type	.L.str,@object                  # @.str
+	.section	.rodata.str1.1,"aMS",@progbits,1
+.L.str:
+	.asciz	"MY_SIZE: %d\n"
+	.size	.L.str, 13
+
+	.type	.L.str.1,@object                # @.str.1
+.L.str.1:
+	.asciz	"strlen of src: %ld %p\n"
+	.size	.L.str.1, 23
+
+	.type	.L.str.2,@object                # @.str.2
+.L.str.2:
+	.asciz	"strlen of dst: %ld %p\n"
+	.size	.L.str.2, 23
+
+	.type	.L.str.3,@object                # @.str.3
+.L.str.3:
+	.asciz	"size before ternary: %ld\n"
+	.size	.L.str.3, 26
+
+	.type	.L.str.4,@object                # @.str.4
+.L.str.4:
+	.asciz	"ret before ternary: %ld\n"
+	.size	.L.str.4, 25
+
+	.type	.L.str.5,@object                # @.str.5
+.L.str.5:
+	.asciz	"len after ternary: %ld\n"
+	.size	.L.str.5, 24
+
+	.type	.L.str.6,@object                # @.str.6
+.L.str.6:
+	.asciz	"ok"
+	.size	.L.str.6, 3
+
+	.type	.L.str.7,@object                # @.str.7
+.L.str.7:
+	.asciz	"dst: %zu\n"
+	.size	.L.str.7, 10
+
+	.type	.L.str.8,@object                # @.str.8
+.L.str.8:
+	.asciz	"done...\n"
+	.size	.L.str.8, 9
+
+	.ident	"Ubuntu clang version 14.0.6"
+	.section	".note.GNU-stack","",@progbits
+	.addrsig
+	.addrsig_sym printf
+	.addrsig_sym fflush
+	.addrsig_sym strlen
+	.addrsig_sym puts

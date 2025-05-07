@@ -161,6 +161,250 @@ anly-2.c-clang-O0:
     section_name:
     special_cause: UB
 
+anly-5.c-gcc-O4:
+    file_name: "anly-5.c"
+    cc: gcc-12
+    input:
+    check_type: 1
+    test_str: Left loop. i=10
+    section_name:
+    special_cause: UB
+
+anly-5.c-gcc-O3:
+    file_name: "anly-5.c"
+    cc: gcc-12
+    input:
+    check_type: 1
+    test_str: Left loop. i=10
+    section_name:
+    special_cause: UB
+
+anly-5.c-gcc-O2:
+    file_name: "anly-5.c"
+    cc: gcc-12
+    input:
+    check_type: 1
+    test_str: Left loop. i=10
+    section_name:
+    special_cause: UB
+
+anly-5.c-gcc-O1:
+    file_name: "anly-5.c"
+    cc: gcc-12
+    input:
+    check_type: 1
+    test_str: Left loop. i=10
+    section_name:
+    special_cause: UB
+
+anly-5.c-gcc-O0:
+    file_name: "anly-5.c"
+    cc: gcc-12
+    input:
+    check_type: 1
+    test_str: Left loop. i=10
+    section_name:
+    special_cause: UB
+
+anly-5.c-clang-O3:
+    file_name: "anly-5.c"
+    cc: clang-14
+    input:
+    check_type: 1
+    test_str: Left loop. i=10
+    section_name:
+    special_cause: UB
+
+anly-5.c-clang-O2:
+    file_name: "anly-5.c"
+    cc: clang-14
+    input:
+    check_type: 1
+    test_str: Left loop. i=10
+    section_name:
+    special_cause: UB
+
+anly-5.c-clang-O1:
+    file_name: "anly-5.c"
+    cc: clang-14
+    input:
+    check_type: 1
+    test_str: Left loop. i=10
+    section_name:
+    special_cause: UB
+
+anly-5.c-clang-O0:
+    file_name: "anly-5.c"
+    cc: clang-14
+    input:
+    check_type: 1
+    test_str: Left loop. i=10
+    section_name:
+    special_cause: UB
+
+anly-6.c-gcc-O4:
+    file_name: "anly-6.c"
+    cc: gcc-12
+    input: 32
+    check_type: 1
+    test_str: 1
+    section_name:
+    special_cause: UB
+
+anly-6.c-gcc-O3:
+    file_name: "anly-6.c"
+    cc: gcc-12
+    input: 32
+    check_type: 1
+    test_str: 1
+    section_name:
+    special_cause: UB
+
+anly-6.c-gcc-O2:
+    file_name: "anly-6.c"
+    cc: gcc-12
+    input: 32
+    check_type: 1
+    test_str: 1
+    section_name:
+    special_cause: UB
+
+anly-6.c-gcc-O1:
+    file_name: "anly-6.c"
+    cc: gcc-12
+    input: 32
+    check_type: 1
+    test_str: 1
+    section_name:
+    special_cause: UB
+
+anly-6.c-gcc-O0:
+    file_name: "anly-6.c"
+    cc: gcc-12
+    input: 32
+    check_type: 1
+    test_str: 1
+    section_name:
+    special_cause: UB
+
+anly-6.c-clang-O3:
+    file_name: "anly-6.c"
+    cc: clang-14
+    input: 32
+    check_type: 1
+    test_str: 1
+    section_name:
+    special_cause: UB
+
+anly-6.c-clang-O2:
+    file_name: "anly-6.c"
+    cc: clang-14
+    input: 32
+    check_type: 1
+    test_str: 1
+    section_name:
+    special_cause: UB
+
+anly-6.c-clang-O1:
+    file_name: "anly-6.c"
+    cc: clang-14
+    input: 32
+    check_type: 1
+    test_str: 1
+    section_name:
+    special_cause: UB
+
+anly-6.c-clang-O0:
+    file_name: "anly-6.c"
+    cc: clang-14
+    input: 32
+    check_type: 1
+    test_str: 1
+    section_name:
+    special_cause: UB
+
+anly-9.c-gcc-O4:
+    file_name: "anly-9.c"
+    cc: gcc-12
+    input:
+    check_type: 1
+    test_str: "s4: 0"
+    section_name:
+    special_cause: UB
+
+anly-9.c-gcc-O3:
+    file_name: "anly-9.c"
+    cc: gcc-12
+    input:
+    check_type: 1
+    test_str: "s4: 0"
+    section_name:
+    special_cause: UB
+
+anly-9.c-gcc-O2:
+    file_name: "anly-9.c"
+    cc: gcc-12
+    input:
+    check_type: 1
+    test_str: "s4: 0"
+    section_name:
+    special_cause: UB
+
+anly-9.c-gcc-O1:
+    file_name: "anly-9.c"
+    cc: gcc-12
+    input:
+    check_type: 1
+    test_str: "s4: 0"
+    section_name:
+    special_cause: UB
+
+anly-9.c-gcc-O0:
+    file_name: "anly-9.c"
+    cc: gcc-12
+    input:
+    check_type: 1
+    test_str: "s4: 0"
+    section_name:
+    special_cause: UB
+
+anly-9.c-clang-O3:
+    file_name: "anly-9.c"
+    cc: clang-14
+    input:
+    check_type: 1
+    test_str: "s4: 0"
+    section_name:
+    special_cause: UB
+
+anly-9.c-clang-O2:
+    file_name: "anly-9.c"
+    cc: clang-14
+    input:
+    check_type: 1
+    test_str: "s4: 0"
+    section_name:
+    special_cause: UB
+
+anly-9.c-clang-O1:
+    file_name: "anly-9.c"
+    cc: clang-14
+    input:
+    check_type: 1
+    test_str: "s4: 0"
+    section_name:
+    special_cause: UB
+
+anly-9.c-clang-O0:
+    file_name: "anly-9.c"
+    cc: clang-14
+    input:
+    check_type: 1
+    test_str: "s4: 0"
+    section_name:
+    special_cause: UB
+
+
 cast-1.c-gcc-O4:
     file_name: "cast-1.c"
     cc: gcc-12

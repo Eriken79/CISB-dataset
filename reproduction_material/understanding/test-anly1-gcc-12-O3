@@ -1,0 +1,224 @@
+	.file	"test-anly1.c"
+	.text
+	.section	.rodata.str1.1,"aMS",@progbits,1
+.LC2:
+	.string	"MY_SIZE: %d\n"
+.LC3:
+	.string	"strlen of src: %ld %p\n"
+.LC4:
+	.string	"strlen of dst: %ld %p\n"
+.LC5:
+	.string	"size before ternary: %ld\n"
+.LC6:
+	.string	"ret before ternary: %ld\n"
+.LC7:
+	.string	"len after ternary: %ld\n"
+.LC8:
+	.string	"ok"
+.LC9:
+	.string	"dst: %zu\n"
+.LC10:
+	.string	"done..."
+	.section	.text.startup,"ax",@progbits
+	.p2align 4
+	.globl	main
+	.type	main, @function
+main:
+.LFB37:
+	.cfi_startproc
+	endbr64
+	pushq	%r12
+	.cfi_def_cfa_offset 16
+	.cfi_offset 12, -16
+	movl	$16, %edx
+	movl	$2, %edi
+	leaq	.LC2(%rip), %rsi
+	pushq	%rbp
+	.cfi_def_cfa_offset 24
+	.cfi_offset 6, -24
+	pushq	%rbx
+	.cfi_def_cfa_offset 32
+	.cfi_offset 3, -32
+	subq	$48, %rsp
+	.cfi_def_cfa_offset 80
+	movdqa	.LC0(%rip), %xmm0
+	movq	%fs:40, %rax
+	movq	%rax, 40(%rsp)
+	xorl	%eax, %eax
+	movq	%rsp, %r12
+	leaq	16(%rsp), %rbp
+	movaps	%xmm0, (%rsp)
+	movdqa	.LC1(%rip), %xmm0
+	movaps	%xmm0, 16(%rsp)
+	call	__printf_chk@PLT
+	xorl	%edi, %edi
+	call	fflush@PLT
+	movq	%r12, %rdi
+	call	strlen@PLT
+	movq	%r12, %rcx
+	movl	$2, %edi
+	leaq	.LC3(%rip), %rsi
+	movq	%rax, %rdx
+	movq	%rax, %rbx
+	xorl	%eax, %eax
+	call	__printf_chk@PLT
+	movq	%rbp, %rdi
+	call	strlen@PLT
+	movq	%rbp, %rcx
+	movl	$2, %edi
+	leaq	.LC4(%rip), %rsi
+	movq	%rax, %rdx
+	xorl	%eax, %eax
+	call	__printf_chk@PLT
+	movl	$16, %edx
+	leaq	.LC5(%rip), %rsi
+	xorl	%eax, %eax
+	movl	$2, %edi
+	call	__printf_chk@PLT
+	movq	%rbx, %rdx
+	movl	$2, %edi
+	xorl	%eax, %eax
+	leaq	.LC6(%rip), %rsi
+	call	__printf_chk@PLT
+	movq	%rbx, %rdx
+	movl	$2, %edi
+	xorl	%eax, %eax
+	leaq	.LC7(%rip), %rsi
+	call	__printf_chk@PLT
+	movq	%r12, %rcx
+	movq	%rbp, %rax
+	cmpl	$8, %ebx
+	jnb	.L23
+.L2:
+	xorl	%edx, %edx
+	testb	$4, %bl
+	jne	.L24
+.L5:
+	testb	$2, %bl
+	jne	.L25
+.L6:
+	testb	$1, %bl
+	jne	.L26
+.L7:
+	movb	$0, 16(%rsp,%rbx)
+	cmpb	$0, 16(%rsp)
+	je	.L8
+	leaq	.LC8(%rip), %rdi
+	call	puts@PLT
+.L8:
+	movq	%rbp, %rdi
+	call	strlen@PLT
+	leaq	.LC9(%rip), %rsi
+	movl	$2, %edi
+	movq	%rax, %rdx
+	xorl	%eax, %eax
+	call	__printf_chk@PLT
+	xorl	%edi, %edi
+	call	fflush@PLT
+	xorl	%edi, %edi
+	call	fflush@PLT
+	leaq	.LC10(%rip), %rdi
+	call	puts@PLT
+	movq	40(%rsp), %rax
+	subq	%fs:40, %rax
+	jne	.L27
+	addq	$48, %rsp
+	.cfi_remember_state
+	.cfi_def_cfa_offset 32
+	xorl	%eax, %eax
+	popq	%rbx
+	.cfi_def_cfa_offset 24
+	popq	%rbp
+	.cfi_def_cfa_offset 16
+	popq	%r12
+	.cfi_def_cfa_offset 8
+	ret
+.L26:
+	.cfi_restore_state
+	movzbl	(%rax,%rdx), %eax
+	movb	%al, (%rcx,%rdx)
+	jmp	.L7
+.L24:
+	movl	(%rax), %edx
+	movl	%edx, (%rcx)
+	movl	$4, %edx
+	jmp	.L5
+.L25:
+	movzwl	(%rax,%rdx), %esi
+	movw	%si, (%rcx,%rdx)
+	addq	$2, %rdx
+	jmp	.L6
+.L23:
+	movl	%ebx, %esi
+	xorl	%eax, %eax
+	andl	$-8, %esi
+.L3:
+	movl	%eax, %edx
+	addl	$8, %eax
+	movq	0(%rbp,%rdx), %rcx
+	movq	%rcx, (%r12,%rdx)
+	cmpl	%esi, %eax
+	jb	.L3
+	leaq	(%r12,%rax), %rcx
+	addq	%rbp, %rax
+	jmp	.L2
+.L27:
+	call	__stack_chk_fail@PLT
+	.cfi_endproc
+.LFE37:
+	.size	main, .-main
+	.section	.rodata.cst16,"aM",@progbits,16
+	.align 16
+.LC0:
+	.byte	65
+	.byte	65
+	.byte	65
+	.byte	65
+	.byte	65
+	.byte	65
+	.byte	65
+	.byte	65
+	.byte	65
+	.byte	65
+	.byte	65
+	.byte	65
+	.byte	65
+	.byte	65
+	.byte	65
+	.byte	65
+	.align 16
+.LC1:
+	.byte	66
+	.byte	66
+	.byte	66
+	.byte	66
+	.byte	66
+	.byte	66
+	.byte	66
+	.byte	66
+	.byte	66
+	.byte	66
+	.byte	66
+	.byte	66
+	.byte	66
+	.byte	66
+	.byte	66
+	.byte	66
+	.ident	"GCC: (Ubuntu 12.3.0-17ubuntu1) 12.3.0"
+	.section	.note.GNU-stack,"",@progbits
+	.section	.note.gnu.property,"a"
+	.align 8
+	.long	1f - 0f
+	.long	4f - 1f
+	.long	5
+0:
+	.string	"GNU"
+1:
+	.align 8
+	.long	0xc0000002
+	.long	3f - 2f
+2:
+	.long	0x3
+3:
+	.align 8
+4:
