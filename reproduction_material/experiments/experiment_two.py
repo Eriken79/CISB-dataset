@@ -57,20 +57,26 @@ def warning_testing(cc, args, testcases_path, file_name):
 def bug_not_trigger(check_type, input, test_str, section_start, section_end='>:'):
     trigger = 0
     if check_type == 1:
-        res = os.popen("./a.out " + input)
-        res = res.read()
+        #res = os.popen("./a.out " + input)
+        res = subprocess.run(f"./a.out {input}", shell=True, capture_output=True, encoding='utf-8', errors='replace')
+        #res = res.read()
+        res = res.stdout
         if res == test_str or test_str in res:
             trigger = 1
 
     if check_type == 2:
-        res = os.popen("./a.out " + input)
-        res = res.read()
+        #res = os.popen("./a.out " + input)
+        res = subprocess.run(f"./a.out {input}", shell=True, capture_output=True, encoding='utf-8', errors='replace')
+        #res = res.read()
+        res = res.stdout
         if res != test_str and test_str not in res:
             trigger = 1
     
     if check_type == 3:
-        res = os.popen("./a.out " + input + " 2>&1")
-        res = res.read()
+        #res = os.popen("./a.out " + input + " 2>&1")
+        res = subprocess.run(f"./a.out {input} 2>&1", shell=True, capture_output=True, encoding='utf-8', errors='replace')
+        #res = res.read()
+        res = res.stdout
         #status = res.close()
         #if status is not None:
         #    signal = os.WTERMSIG(status)
