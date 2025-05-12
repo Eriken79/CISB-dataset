@@ -7,7 +7,7 @@ symbol_map = {0: r"\textcolor{red}{$\times$}",
               1: r"\textcolor{green}{$\checkmark$}", 
               2: r"\textcolor{blue}{?}"}
 
-df = pd.read_csv("./csv_files/experiment_1.csv")
+df = pd.read_csv("./csv_files/experiment_2.csv")
 
 df["config"] = df["compiler"] + "_" + df["optimization_level"] + "_" + df["architecture"]
 
@@ -17,7 +17,7 @@ symbol_table = pivot_table.replace(symbol_map)
 
 latex_table = pivot_table.to_latex(escape=False)  # Keep LaTeX symbols intact
 
-with open("./figure_out_arm/experiment_1_arm.tex", "w") as f:
+with open("./figure_out_arm/experiment_2_arm.tex", "w") as f:
     f.write(latex_table)
 
 
@@ -39,7 +39,8 @@ legend_elements = [
 
 plt.legend(handles=legend_elements, loc='lower center', bbox_to_anchor=(0.5, -0.30),
            ncol=3, frameon=False)
-fig.subplots_adjust(bottom=0.3)
+fig.subplots_adjust(bottom=0.4)
+fig.tight_layout(pad=2.0)
 
 # Iterate through the DataFrame and plot text
 for i, row in enumerate(pivot_table.index):
@@ -59,9 +60,9 @@ ax.set_ylim(-0.5, len(pivot_table.index)-0.5)
 ax.invert_yaxis()  # Make sure first row appears at the top
 ax.set_xlabel("Test ID")
 ax.set_ylabel("Configuration")
-ax.set_title("Initial Experiment (ARM)")
+ax.set_title("Enhanced Experiment (ARM)")
 
 # Save figure as PDF for LaTeX
-plt.savefig("./figure_out_arm/experiment_1_arm.pdf", bbox_inches="tight", dpi=300)
+plt.savefig("./figure_out_arm/experiment_2_arm.pdf", bbox_inches="tight", dpi=300)
 plt.show()
 

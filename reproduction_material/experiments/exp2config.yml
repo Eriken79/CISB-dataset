@@ -1312,7 +1312,7 @@ concur-3.c-gcc-O4:
     check_type: 2
     test_str: "101 102"
     section_name:
-    default_option: "-m32 -pthread"
+    default_option: "-pthread"
     special_cause: UB
 
 
@@ -1324,7 +1324,7 @@ concur-3.c-gcc-O3:
     check_type: 2
     test_str: "101 102"
     section_name:
-    default_option: "-m32 -pthread"
+    default_option: "-pthread"
     special_cause: UB
 
 concur-3.c-gcc-O2:
@@ -1335,7 +1335,7 @@ concur-3.c-gcc-O2:
     check_type: 2
     test_str: "101 102"
     section_name:
-    default_option: "-m32 -pthread"
+    default_option: "-pthread"
     special_cause: UB
 
 concur-3.c-gcc-O1:
@@ -1346,7 +1346,7 @@ concur-3.c-gcc-O1:
     check_type: 2
     test_str: "101 102"
     section_name:
-    default_option: "-m32 -pthread"
+    default_option: "-pthread"
     special_cause: UB
 
 concur-3.c-gcc-O0:
@@ -1357,7 +1357,7 @@ concur-3.c-gcc-O0:
     check_type: 2
     test_str: "101 102"
     section_name:
-    default_option: "-m32 -pthread"
+    default_option: "-pthread"
     special_cause: UB
 
 concur-3.c-clang-O3:
@@ -1367,7 +1367,7 @@ concur-3.c-clang-O3:
     check_type: 2
     test_str: "101 102"
     section_name:
-    default_option: "-m32 -pthread"
+    default_option: "-pthread"
     special_cause: UB
 
 concur-3.c-clang-O2:
@@ -1377,7 +1377,7 @@ concur-3.c-clang-O2:
     check_type: 2
     test_str: "101 102"
     section_name:
-    default_option: "-m32 -pthread"
+    default_option: "-pthread"
     special_cause: UB
 
 concur-3.c-clang-O1:
@@ -1387,7 +1387,7 @@ concur-3.c-clang-O1:
     check_type: 2
     test_str: "101 102"
     section_name:
-    default_option: "-m32 -pthread"
+    default_option: "-pthread"
     special_cause: UB
 
 concur-3.c-clang-O0:
@@ -1397,5 +1397,5 @@ concur-3.c-clang-O0:
     check_type: 2
     test_str: "101 102"
     section_name:
-    default_option: "-m32 -pthread"
+    default_option: "-pthread"
     special_cause: UB
