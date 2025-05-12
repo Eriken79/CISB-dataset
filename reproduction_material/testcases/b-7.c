@@ -15,8 +15,8 @@ void test(unsigned char a){
 }
 
 int main(int argc, char* argv[]){
-    //int i = 255;
-    char i = atoi(argv[1]);//input 255
+    int i = 255;
+    //char i = atoi(argv[1]);//input 255
     printf("%d\n", i);
     test(i);
 }

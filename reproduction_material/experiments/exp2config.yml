@@ -247,7 +247,7 @@ anly-6.c-gcc-O4:
     cc: gcc-12
     input: 32
     check_type: 1
-    test_str: 1
+    test_str: "1"
     section_name:
     special_cause: UB
 
@@ -256,7 +256,7 @@ anly-6.c-gcc-O3:
     cc: gcc-12
     input: 32
     check_type: 1
-    test_str: 1
+    test_str: "1"
     section_name:
     special_cause: UB
 
@@ -265,7 +265,7 @@ anly-6.c-gcc-O2:
     cc: gcc-12
     input: 32
     check_type: 1
-    test_str: 1
+    test_str: "1"
     section_name:
     special_cause: UB
 
@@ -274,7 +274,7 @@ anly-6.c-gcc-O1:
     cc: gcc-12
     input: 32
     check_type: 1
-    test_str: 1
+    test_str: "1"
     section_name:
     special_cause: UB
 
@@ -283,7 +283,7 @@ anly-6.c-gcc-O0:
     cc: gcc-12
     input: 32
     check_type: 1
-    test_str: 1
+    test_str: "1"
     section_name:
     special_cause: UB
 
@@ -292,7 +292,7 @@ anly-6.c-clang-O3:
     cc: clang-14
     input: 32
     check_type: 1
-    test_str: 1
+    test_str: "1"
     section_name:
     special_cause: UB
 
@@ -301,7 +301,7 @@ anly-6.c-clang-O2:
     cc: clang-14
     input: 32
     check_type: 1
-    test_str: 1
+    test_str: "1"
     section_name:
     special_cause: UB
 
@@ -310,7 +310,7 @@ anly-6.c-clang-O1:
     cc: clang-14
     input: 32
     check_type: 1
-    test_str: 1
+    test_str: "1"
     section_name:
     special_cause: UB
 
@@ -319,7 +319,7 @@ anly-6.c-clang-O0:
     cc: clang-14
     input: 32
     check_type: 1
-    test_str: 1
+    test_str: "1"
     section_name:
     special_cause: UB
 
@@ -328,7 +328,7 @@ anly-9.c-gcc-O4:
     cc: gcc-12
     input:
     check_type: 1
-    test_str: "s4: 0"
+    test_str: "s4:0"
     section_name:
     special_cause: UB
 
@@ -337,7 +337,7 @@ anly-9.c-gcc-O3:
     cc: gcc-12
     input:
     check_type: 1
-    test_str: "s4: 0"
+    test_str: "s4:0"
     section_name:
     special_cause: UB
 
@@ -346,7 +346,7 @@ anly-9.c-gcc-O2:
     cc: gcc-12
     input:
     check_type: 1
-    test_str: "s4: 0"
+    test_str: "s4:0"
     section_name:
     special_cause: UB
 
@@ -355,7 +355,7 @@ anly-9.c-gcc-O1:
     cc: gcc-12
     input:
     check_type: 1
-    test_str: "s4: 0"
+    test_str: "s4:0"
     section_name:
     special_cause: UB
 
@@ -364,7 +364,7 @@ anly-9.c-gcc-O0:
     cc: gcc-12
     input:
     check_type: 1
-    test_str: "s4: 0"
+    test_str: "s4:0"
     section_name:
     special_cause: UB
 
@@ -373,7 +373,7 @@ anly-9.c-clang-O3:
     cc: clang-14
     input:
     check_type: 1
-    test_str: "s4: 0"
+    test_str: "s4:0"
     section_name:
     special_cause: UB
 
@@ -382,7 +382,7 @@ anly-9.c-clang-O2:
     cc: clang-14
     input:
     check_type: 1
-    test_str: "s4: 0"
+    test_str: "s4:0"
     section_name:
     special_cause: UB
 
@@ -391,7 +391,7 @@ anly-9.c-clang-O1:
     cc: clang-14
     input:
     check_type: 1
-    test_str: "s4: 0"
+    test_str: "s4:0"
     section_name:
     special_cause: UB
 
@@ -400,7 +400,90 @@ anly-9.c-clang-O0:
     cc: clang-14
     input:
     check_type: 1
-    test_str: "s4: 0"
+    test_str: "s4:0"
+    section_name:
+    special_cause: UB
+
+anly-11.c-gcc-O4:
+    file_name: "anly-11.c"
+    cc: gcc-12
+    input: 30 Getit,pleasedonottellanyoneelse
+    check_type: 2
+    test_str: "ttellanyoneels"
+    section_name:
+    special_cause: UB
+
+anly-11.c-gcc-O3:
+    file_name: "anly-11.c"
+    cc: gcc-12
+    input: 30 Getit,pleasedonottellanyoneelse
+    check_type: 2
+    test_str: "ttellanyoneels"
+    section_name:
+    special_cause: UB
+
+anly-11.c-gcc-O2:
+    file_name: "anly-11.c"
+    cc: gcc-12
+    input: 30 Getit,pleasedonottellanyoneelse
+    check_type: 2
+    test_str: "ttellanyoneels"
+    section_name:
+    special_cause: UB
+
+anly-11.c-gcc-O1:
+    file_name: "anly-11.c"
+    cc: gcc-12
+    input: 30 Getit,pleasedonottellanyoneelse
+    check_type: 2
+    test_str: "ttellanyoneels"
+    section_name:
+    special_cause: UB
+
+anly-11.c-gcc-O0:
+    file_name: "anly-11.c"
+    cc: gcc-12
+    input: 30 Getit,pleasedonottellanyoneelse
+    check_type: 2
+    test_str: "ttellanyoneels"
+    section_name:
+    special_cause: UB
+
+
+
+anly-11.c-clang-O3:
+    file_name: "anly-11.c"
+    cc: clang-14
+    input: 30 Getit,pleasedonottellanyoneelse
+    check_type: 2
+    test_str: "ttellanyoneels"
+    section_name:
+    special_cause: UB
+
+anly-11.c-clang-O2:
+    file_name: "anly-11.c"
+    cc: clang-14
+    input: 30 Getit,pleasedonottellanyoneelse
+    check_type: 2
+    test_str: "ttellanyoneels"
+    section_name:
+    special_cause: UB
+
+anly-11.c-clang-O1:
+    file_name: "anly-11.c"
+    cc: clang-14
+    input: 30 Getit,pleasedonottellanyoneelse
+    check_type: 2
+    test_str: "ttellanyoneels"
+    section_name:
+    special_cause: UB
+
+anly-11.c-clang-O0:
+    file_name: "anly-11.c"
+    cc: clang-14
+    input: 30 Getit,pleasedonottellanyoneelse
+    check_type: 2
+    test_str: "ttellanyoneels"
     section_name:
     special_cause: UB
 
@@ -568,7 +651,86 @@ cast-2.c-clang-O0:
     section_name:
     special_cause: UB
 
-    special_cause: DB
+cast-3.c-gcc-O4:
+    file_name: "cast-3.c"
+    cc: gcc-12
+    input:
+    check_type: 2
+    test_str: "0x34"
+    section_name:
+    special_cause: UB
+
+cast-3.c-gcc-O3:
+    file_name: "cast-3.c"
+    cc: gcc-12
+    input:
+    check_type: 2
+    test_str: "0x34"
+    section_name:
+    special_cause: UB
+
+cast-3.c-gcc-O2:
+    file_name: "cast-3.c"
+    cc: gcc-12
+    input:
+    check_type: 2
+    test_str: "0x34"
+    section_name:
+    special_cause: UB
+
+cast-3.c-gcc-O1:
+    file_name: "cast-3.c"
+    cc: gcc-12
+    input:
+    check_type: 2
+    test_str: "0x34"
+    section_name:
+    special_cause: UB
+
+cast-3.c-gcc-O0:
+    file_name: "cast-3.c"
+    cc: gcc-12
+    input:
+    check_type: 2
+    test_str: "0x34"
+    section_name:
+    special_cause: UB
+
+cast-3.c-clang-O3:
+    file_name: "cast-3.c"
+    cc: clang-14
+    input:
+    check_type: 2
+    test_str: "0x34"
+    section_name:
+    special_cause: UB
+
+cast-3.c-clang-O2:
+    file_name: "cast-3.c"
+    cc: clang-14
+    input:
+    check_type: 2
+    test_str: "0x34"
+    section_name:
+    special_cause: UB
+
+cast-3.c-clang-O1:
+    file_name: "cast-3.c"
+    cc: clang-14
+    input:
+    check_type: 2
+    test_str: "0x34"
+    section_name:
+    special_cause: UB
+
+cast-3.c-clang-O0:
+    file_name: "cast-3.c"
+    cc: clang-14
+    input:
+    check_type: 2
+    test_str: "0x34"
+    section_name:
+    special_cause: UB
 
 anly-8.c-gcc-O4:
     file_name: "anly-8.c"
@@ -815,6 +977,251 @@ cast-6.c-clang-O0:
     test_str: "ok"
     section_name:
     special_cause: UB
+
+std-1.c-gcc-O4:
+    file_name: "std-1.c"
+    cc: gcc-12
+    input: a
+    check_type: 3
+    test_str:
+    section_name:
+    special_cause: DB
+
+std-1.c-gcc-O3:
+    file_name: "std-1.c"
+    cc: gcc-12
+    input: a
+    check_type: 3
+    test_str:
+    section_name:
+    special_cause: DB
+
+std-1.c-gcc-O2:
+    file_name: "std-1.c"
+    cc: gcc-12
+    input: a
+    check_type: 3
+    test_str: 
+    section_name:
+    special_cause: DB
+
+std-1.c-gcc-O1:
+    file_name: "std-1.c"
+    cc: gcc-12
+    input: a
+    check_type: 3
+    test_str: 
+    section_name:
+    special_cause: DB
+
+std-1.c-gcc-O0:
+    file_name: "std-1.c"
+    cc: gcc-12
+    input: a
+    check_type: 3
+    test_str:
+    section_name:
+    special_cause: DB
+
+std-1.c-clang-O3:
+    file_name: "std-1.c"
+    cc: clang-14
+    input: a
+    check_type: 3
+    test_str:
+    section_name:
+    special_cause: DB
+
+std-1.c-clang-O2:
+    file_name: "std-1.c"
+    cc: clang-14
+    input: a
+    check_type: 3
+    test_str: 
+    section_name:
+    special_cause: DB
+
+std-1.c-clang-O1:
+    file_name: "std-1.c"
+    cc: clang-14
+    input: a
+    check_type: 3
+    test_str:
+    section_name:
+    special_cause: DB
+
+std-1.c-clang-O0:
+    file_name: "std-1.c"
+    cc: clang-14
+    input: a
+    check_type: 3
+    test_str:
+    section_name:
+    special_cause: DB
+
+
+std-2.c-gcc-O4:
+    file_name: "std-2.c"
+    cc: gcc-12
+    input: 0
+    check_type: 2
+    test_str: "32: CISB!"
+    section_name:
+    special_cause: DB
+
+std-2.c-gcc-O3:
+    file_name: "std-2.c"
+    cc: gcc-12
+    input: 0
+    check_type: 2
+    test_str: "32: CISB!"
+    section_name:
+    special_cause: DB
+
+std-2.c-gcc-O2:
+    file_name: "std-2.c"
+    cc: gcc-12
+    input: 0
+    check_type: 2
+    test_str: "32: CISB!"
+    section_name:
+    special_cause: DB
+
+std-2.c-gcc-O1:
+    file_name: "std-2.c"
+    cc: gcc-12
+    input: 0
+    check_type: 2
+    test_str: "32: CISB!"
+    section_name:
+    special_cause: DB
+
+std-2.c-gcc-O0:
+    file_name: "std-2.c"
+    cc: gcc-12
+    input: 0
+    check_type: 2
+    test_str: "32: CISB!"
+    section_name:
+    special_cause: DB
+
+std-2.c-clang-O3:
+    file_name: "std-2.c"
+    cc: clang-14
+    input: 0
+    check_type: 2
+    test_str: "32: CISB!"
+    section_name:
+    special_cause: DB
+
+std-2.c-clang-O2:
+    file_name: "std-2.c"
+    cc: clang-14
+    input: 0
+    check_type: 2
+    test_str: "32: CISB!"
+    section_name:
+    special_cause: DB
+
+std-2.c-clang-O1:
+    file_name: "std-2.c"
+    cc: clang-14
+    input: 0
+    check_type: 2
+    test_str: "32: CISB!"
+    section_name:
+    special_cause: DB
+
+std-2.c-clang-O0:
+    file_name: "std-2.c"
+    cc: clang-14
+    input: 0
+    check_type: 2
+    test_str: "32: CISB!"
+    section_name:
+    special_cause: DB
+
+
+std-3.c-gcc-O4:
+    file_name: "std-3.c"
+    cc: gcc-12
+    input: abcde 97 5
+    check_type: 1
+    test_str: "aaaaa"
+    section_name:
+    special_cause: DB
+
+std-3.c-gcc-O3:
+    file_name: "std-3.c"
+    cc: gcc-12
+    input: abcde 97 5
+    check_type: 1
+    test_str: "aaaaa"
+    section_name:
+    special_cause: DB
+
+std-3.c-gcc-O2:
+    file_name: "std-3.c"
+    cc: gcc-12
+    input: abcde 97 5
+    check_type: 1
+    test_str: "aaaaa"
+    section_name:
+    special_cause: DB
+
+std-3.c-gcc-O1:
+    file_name: "std-3.c"
+    cc: gcc-12
+    input: abcde 97 5
+    check_type: 1
+    test_str: "aaaaa"
+    section_name:
+    special_cause: DB
+
+std-3.c-gcc-O0:
+    file_name: "std-3.c"
+    cc: gcc-12
+    input: abcde 97 5
+    check_type: 1
+    test_str: "aaaaa"
+    section_name:
+    special_cause: DB
+
+std-3.c-clang-O3:
+    file_name: "std-3.c"
+    cc: clang-14
+    input: abcde 97 5
+    check_type: 1
+    test_str: "aaaaa"
+    section_name:
+    special_cause: DB
+
+std-3.c-clang-O2:
+    file_name: "std-3.c"
+    cc: clang-14
+    input: abcde 97 5
+    check_type: 1
+    test_str: "aaaaa"
+    section_name:
+    special_cause: DB
+
+std-3.c-clang-O1:
+    file_name: "std-3.c"
+    cc: clang-14
+    input: abcde 97 5
+    check_type: 1
+    test_str: "aaaaa"
+    section_name:
+    special_cause: DB
+
+std-3.c-clang-O0:
+    file_name: "std-3.c"
+    cc: clang-14
+    input: abcde 97 5
+    check_type: 1
+    test_str: "aaaaa"
+    section_name:
+    special_cause: DB
 
 std-4.c-gcc-O4:
     file_name: "std-4.c"

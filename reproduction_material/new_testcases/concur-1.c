@@ -1,33 +1,45 @@
-/*
-	x86-64 gcc4.4.7 -O1
-	Generate the assembly code of this program. If string "panic" is in the next line of string "%dil", there is a bug.
-*/
 #include <stdio.h>
-#define DMA_ADDR_REG		(*(unsigned volatile *) 0xffff1000)
+#include <stdlib.h>
+#include <pthread.h>
 
-void panic(void){
-    printf("panic\n");
-}
+/*
+For Linux the correct command is: gcc -pthread b_12.c
+in O3 it is in the assembly code      
+.L7:
+jmp .L7
+so there is a bug.
+in O2/O1, "if(x==y)" is deleted, so the program would never stop
+*/
 
 
-static void inner_func(void *data, unsigned size)
+int x = 23;
+int y = 29;
+
+void* set_x(void* arg)
 {
-	if (!size)
-		panic();
-	else
-		DMA_ADDR_REG = (unsigned long) data;
+    (void)arg;
+    x = 29;
+
+    return NULL;
 }
 
-void outer_func(unsigned offset, unsigned size)
+int main(void)
 {
-	unsigned char param[1];
-	param[0] = offset;
-	inner_func(param, size);
-}
+	int i = 0;
+        pthread_t p1;
 
-int main(){
-    unsigned a = 0;
-    unsigned b = 0;
-    outer_func(a,b);
-    return 0;
+        pthread_create(&p1, NULL, set_x, NULL);
+        pthread_detach(p1);
+        while (x < y) {
+                if (x == y) {
+			puts("exiting!");
+                        break;
+		}
+		if (i == 100000) {
+			puts("infinte!");
+			break;
+		}
+		i++;
+	}
+        return 0;
 }

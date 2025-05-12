@@ -28,7 +28,7 @@ void bar(int a, int b)
     // printf("a:%d\n", u.a);
     // printf("b:%d\n", u.b);
     // printf("s3:%d\n", u.s3);
-    printf("s4:%d", u.s4);
+    printf("s4:%d\n", u.s4);
     
     
     // foo(&u);

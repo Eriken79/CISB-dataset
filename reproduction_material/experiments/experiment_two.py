@@ -59,7 +59,7 @@ def bug_not_trigger(check_type, input, test_str, section_start, section_end='>:'
     if check_type == 1:
         res = os.popen("./a.out " + input)
         res = res.read()
-        if res == test_str or test_str in res :
+        if res == test_str or test_str in res:
             trigger = 1
 
     if check_type == 2:
@@ -67,48 +67,17 @@ def bug_not_trigger(check_type, input, test_str, section_start, section_end='>:'
         res = res.read()
         if res != test_str and test_str not in res:
             trigger = 1
-
+    
     if check_type == 3:
-        f = open('temp.txt', 'w+')
-        os.system('objdump -d a.out > ' + ' temp.txt')
-        read_res = f.read()
-        if (read_res.find(test_str, read_res.find(section_start),
-                          read_res.find(section_end, read_res.find(section_start) + len(section_start))) != -1):
+        res = os.popen("./a.out " + input + " 2>&1")
+        res = res.read()
+        #status = res.close()
+        #if status is not None:
+        #    signal = os.WTERMSIG(status)
+        #    if signal == 11:
+        #        print(signal)
+        if res != "Segmentation fault (core dumped)" and "Segmentation fault (core dumped)" not in res:
             trigger = 1
-        f.close()
-
-    if check_type == 4:
-        f = open('temp.txt', 'w+')
-        os.system('objdump -d a.out > ' + ' temp.txt')
-        read_res = f.read()
-        if (read_res.find(test_str, read_res.find(section_start),
-                          read_res.find(section_end, read_res.find(section_start) + len(section_start))) == -1):
-            trigger = 1
-        f.close()
-
-    if check_type == 5:
-        f = open('temp.s', 'r')
-        read_res = f.read()
-        if (read_res.find(test_str, read_res.find(section_start),
-                          read_res.find(section_end, read_res.find('\n', read_res.find(section_start) + len(section_start)))) != -1):
-            trigger = 1
-        f.close()
-
-    if check_type == 6:
-        f = open('temp.s', 'r')
-        read_res = f.read()
-        if (read_res.find(test_str, read_res.find(section_start),
-                          read_res.find(section_end, read_res.find('\n', read_res.find(section_start) + len(section_start)))) == -1):
-            trigger = 1
-        f.close()
-
-    if check_type == 7:
-        f = open('temp.s', 'r')
-        read_res = f.read()
-        if (read_res.find(test_str, read_res.find('\n', read_res.find(section_start)),
-                          read_res.find('\n', read_res.find('\n', read_res.find(section_start)) + 1)) == -1):
-            trigger = 1
-        f.close()
 
     return trigger
 
