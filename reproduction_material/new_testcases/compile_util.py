@@ -17,7 +17,7 @@ def compile_c_file(c_file):
             if opt == "O4" and compiler_path == "clang-14":
                 continue
             output_file = f"{base_name}-{compiler_name}-{opt}"
-            cmd = [compiler_path, c_file, "-g", "-o", output_file, f"-{opt}"]
+            cmd = [compiler_path, c_file, "-g", "-pthread", "-o", output_file, f"-{opt}"]
             try:
                 subprocess.run(cmd, check=True)
                 print(f"Compiled {c_file} with {compiler_name} at {opt} -> {output_file}")

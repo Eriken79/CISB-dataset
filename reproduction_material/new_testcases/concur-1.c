@@ -35,11 +35,11 @@ int main(void)
 			puts("exiting!");
                         break;
 		}
-		if (i == 100000) {
-			puts("infinte!");
-			break;
-		}
-		i++;
+		//if (i == 100000) {
+	//		puts("infinte!");
+	//		break;
+	//	}
+	//	i++;
 	}
         return 0;
 }
