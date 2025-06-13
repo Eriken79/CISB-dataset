@@ -1304,6 +1304,87 @@ std-4.c-clang-O0:
     section_name:
     special_cause: DB
 
+concur-1.c-gcc-O4:
+    file_name: "concur-1.c"
+    cc: gcc-12
+    input:
+    check_type: 2
+    test_str: "infinite!"
+    section_name:
+    special_cause: UB
+
+concur-1.c-gcc-O3:
+    file_name: "concur-1.c"
+    cc: gcc-12
+    input:
+    check_type: 2
+    test_str: "infinite!"
+    section_name:
+    special_cause: UB
+
+concur-1.c-gcc-O2:
+    file_name: "concur-1.c"
+    cc: gcc-12
+    input:
+    check_type: 2
+    test_str: "infinite!"
+    section_name:
+    special_cause: UB
+
+concur-1.c-gcc-O1:
+    file_name: "concur-1.c"
+    cc: gcc-12
+    input:
+    check_type: 2
+    test_str: "infinite!"
+    section_name:
+    special_cause: UB
+
+concur-1.c-gcc-O0:
+    file_name: "concur-1.c"
+    cc: gcc-12
+    input:
+    check_type: 2
+    test_str: "infinite!"
+    section_name:
+    special_cause: UB
+
+concur-1.c-clang-O3:
+    file_name: "concur-1.c"
+    cc: clang-14
+    input:
+    check_type: 2
+    test_str: "infinite!"
+    section_name:
+    special_cause: UB
+
+concur-1.c-clang-O2:
+    file_name: "concur-1.c"
+    cc: clang-14
+    input:
+    check_type: 2
+    test_str: "infinite!"
+    section_name:
+    special_cause: UB
+
+concur-1.c-clang-O1:
+    file_name: "concur-1.c"
+    cc: clang-14
+    input:
+    check_type: 2
+    test_str: "infinite!"
+    section_name:
+    special_cause: UB
+
+concur-1.c-clang-O0:
+    file_name: "concur-1.c"
+    cc: clang-14
+    input:
+    check_type: 2
+    test_str: "infinite!"
+    section_name:
+    special_cause: UB
+
 concur-3.c-gcc-O4:
     file_name: "concur-3.c"
     cc: gcc-12
